@@ -1,8 +1,12 @@
 #Greenfoot properties
-#Thu Sep 22 19:33:38 PDT 2016
-project.charset=UTF-8
+#Thu Sep 22 21:14:56 PDT 2016
+class.AlienPlanet.superclass=greenfoot.Actor
+mainWindow.width=850
+class.GameWorld.superclass=greenfoot.World
 version=2.8.0
+project.charset=UTF-8
+class.HomePlanet.superclass=greenfoot.Actor
+world.lastInstantiated=GameWorld
 mainWindow.y=40
 mainWindow.x=40
 mainWindow.height=600
-mainWindow.width=850
