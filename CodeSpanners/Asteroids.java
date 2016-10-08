@@ -14,9 +14,14 @@ public class Asteroids extends Actor implements DestroyableObjects
      */
     public void act() 
     {
+       
         // Add your action code here.
     }    
-    
+    public Asteroids(){
+        GreenfootImage image = getImage() ;
+        image.scale(70,60) ;
+        
+    }
     public void explode()
     {
         
