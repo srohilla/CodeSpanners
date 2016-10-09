@@ -11,6 +11,12 @@ public class Soldier extends Actor implements movableObjects
     Boolean isBlue;
     int soldierNumber;
     
+    public Soldier()
+    {
+        GreenfootImage image = getImage() ;
+        image.scale(150,150) ;
+    }
+    
     public void act() 
     {
         // Add your action code here.
