@@ -16,6 +16,12 @@ public class AlienPlanet extends Actor implements Planet
      * Act - do whatever the AlienPlanet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+
+    public AlienPlanet(){
+        GreenfootImage image = getImage() ;
+        image.scale(150,150) ;
+        
+    }
     public void act() 
     {
         // Add your action code here.

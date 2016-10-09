@@ -10,6 +10,13 @@ public class HomePlanet extends Actor implements Planet
 {
    int noOfSoldiers;
    int weight[];
+   
+   public HomePlanet(){
+        GreenfootImage image = getImage() ;
+        image.scale(150,150) ;
+        
+    }
+   
     /**
      * Act - do whatever the HomePlanet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,12 +25,7 @@ public class HomePlanet extends Actor implements Planet
     {
         // Add your action code here.
     }    
-    /**
-     * Constructor for objects of class HomePlanet
-     */
-    public HomePlanet()
-    {
-    }
+   
     int getSoldierCount()
     {
         // put your code here
