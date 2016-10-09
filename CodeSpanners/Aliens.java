@@ -21,4 +21,11 @@ public class Aliens extends Actor implements DestroyableObjects
     {
         
     }
+    
+    public Aliens(){
+        GreenfootImage image = getImage() ;
+        image.scale(70,60) ;
+  
+        
+    }
 }
