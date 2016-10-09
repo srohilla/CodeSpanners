@@ -28,6 +28,7 @@ public class GameWorld extends World
      addObject(new Asteroids(),30,60);
      addObject(new HomePlanet(),100,460);
      addObject(new AlienPlanet(),660,100);
+     addObject(new Aliens(),90, 100);
     }
     void submitScores(){
     //to do
