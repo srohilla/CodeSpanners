@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Sun Oct 09 13:16:20 PDT 2016
+#Sun Oct 09 13:23:26 PDT 2016
 target4.type=ClassTarget
 target8.showInterface=false
 dependency3.from=GameWorld
@@ -76,6 +76,7 @@ target1.typeParameters=
 target6.y=180
 target6.x=10
 class.AlienPlanet.superclass=greenfoot.Actor
+class.SpaceShip.image=spaceship.png
 class.Planet.superclass=
 target10.width=80
 target2.height=50
