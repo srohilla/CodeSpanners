@@ -14,7 +14,10 @@ public class SpaceShip extends Actor implements movableObjects
      */
     int start;
     int end;
-    
+    public SpaceShip(){
+        GreenfootImage image = getImage() ;
+        image.scale(100,100) ;
+    }
     public void act() 
     {
         // Add your action code here.

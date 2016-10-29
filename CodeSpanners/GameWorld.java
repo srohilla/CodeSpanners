@@ -13,6 +13,7 @@ public class GameWorld extends World
     int surplusSoldiers;
     int[] planets;
     int[] soldiers;
+    
 
     /**
      * Constructor for objects of class MyWorld.
@@ -30,6 +31,7 @@ public class GameWorld extends World
      addObject(new AlienPlanet(),660,100);
      addObject(new Aliens(),90, 100);
      addObject(new Soldier(),600,300);
+     addObject(new SpaceShip(),200,460);
     }
     void submitScores(){
     //to do
