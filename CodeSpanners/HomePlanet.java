@@ -10,10 +10,11 @@ public class HomePlanet extends Actor implements Planet
 {
    int noOfSoldiers;
    int weight[];
+     GifImage planet= new GifImage("planet.gif");
    
-   public HomePlanet(){
-        GreenfootImage image = getImage() ;
-        image.scale(150,150) ;
+   public HomePlanet()
+   {
+       
         
     }
    
@@ -24,6 +25,8 @@ public class HomePlanet extends Actor implements Planet
     public void act() 
     {
         // Add your action code here.
+        
+        setImage(planet.getCurrentImage());
     }    
    
     int getSoldierCount()
