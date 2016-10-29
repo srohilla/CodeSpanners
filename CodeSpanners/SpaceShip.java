@@ -14,12 +14,21 @@ public class SpaceShip extends Actor implements movableObjects
      */
     int start;
     int end;
+    
+    int mouseX, mouseY ;
     public SpaceShip(){
         GreenfootImage image = getImage() ;
         image.scale(100,100) ;
     }
     public void act() 
     {
+        
+        if(Greenfoot.mouseDragged(this)) {          
+            MouseInfo mouse = Greenfoot.getMouseInfo();  
+            mouseX=mouse.getX();  
+            mouseY=mouse.getY();  
+            setLocation(mouseX, mouseY);  
+        }
         // Add your action code here.
     }  
     
