@@ -27,7 +27,7 @@ public class GameWorld extends World
     }
     void prepare(){
      addObject(new Asteroids(),30,60);
-     addObject(new HomePlanet(),100,460);
+     addObject(new HomePlanet(),150,460);
      addObject(new AlienPlanet(),660,100);
      addObject(new Aliens(),90, 100);
      addObject(new Soldier(),600,300);
