@@ -13,15 +13,25 @@ public class GameWorld extends World
     int surplusSoldiers;
     int[] planets;
     int[] soldiers;
+    
 
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
     public GameWorld()
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+    {     super(3000, 1000, 1);
+      
+          prepare();
+       
+    }
+    void prepare(){
+     addObject(new Asteroids(),30,60);
+     addObject(new HomePlanet(),100,460);
+     addObject(new AlienPlanet(),660,100);
+     addObject(new Aliens(),90, 100);
+     addObject(new Soldier(),600,300);
+     addObject(new SpaceShip(),200,460);
     }
     void submitScores(){
     //to do
