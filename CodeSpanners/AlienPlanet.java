@@ -27,8 +27,13 @@ public class AlienPlanet extends Actor implements Planet
         // Add your action code here.
      setImage(planet.getCurrentImage());
      capture();
+     if(Greenfoot.mouseDragged(this)){
+        if(Greenfoot.mouseDragEnded(this)){
+        }
+        }
     // Greenfoot.delay(100);
     // world.removeObject(alien);
+    
     }    
     
     public void capture()
