@@ -13,7 +13,7 @@ public class GameWorld extends World
     int surplusSoldiers;
     int[] planets;
     int[] soldiers;
-
+    SpaceShip s=new SpaceShip();
 
     /**
      * Constructor for objects of class MyWorld.
@@ -25,14 +25,17 @@ public class GameWorld extends World
           prepare();
        
     }
-    
+    SpaceShip getSpaceShip(){
+        return s;
+    }
     void prepare(){
-    addObject(new Asteroids(),240,160);
+     addObject(new Asteroids(),240,160);
      addObject(new HomePlanet(),150,460);
      addObject(new AlienPlanet(),660,100);
+     addObject(new AlienPlanet(),660,500);
      addObject(new Aliens(),660, 100);
      addObject(new Soldier(),150,300);
-     addObject(new SpaceShip(),200,460);
+     addObject(s,200,460);
     }
     void submitScores(){
     //to do
