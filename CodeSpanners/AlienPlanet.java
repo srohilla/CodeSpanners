@@ -28,7 +28,12 @@ public class AlienPlanet extends Actor implements Planet
      setImage(planet.getCurrentImage());
      capture();
      if(Greenfoot.mouseDragged(this)){
-        if(Greenfoot.mouseDragEnded(this)){
+        if(Greenfoot.mouseDragged(getOneObjectAtOffset(Greenfoot.getMouseInfo().getX(),Greenfoot.getMouseInfo().getY(),AlienPlanet.class))){
+            System.out.println("Insise");
+            Actor a=Greenfoot.getMouseInfo().getActor();
+            GameWorld g=(GameWorld) getWorld();
+            SpaceShip s=g.getSpaceShip();
+            s.setLocation(a.getX(),a.getY());
         }
         }
     // Greenfoot.delay(100);
