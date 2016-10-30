@@ -50,6 +50,7 @@ public class AlienPlanet extends Actor implements Planet
     Greenfoot.delay(100);
     world.removeObject(alien);
     world.addObject(new Soldier(),660,100);
+    world.addObject(new Soldier(),660,500);
     
     }
     

@@ -34,6 +34,7 @@ public class GameWorld extends World
      addObject(new AlienPlanet(),660,100);
      addObject(new AlienPlanet(),660,500);
      addObject(new Aliens(),660, 100);
+     addObject(new Aliens(),660, 500);
      addObject(new Soldier(),150,300);
      addObject(s,200,460);
     }
