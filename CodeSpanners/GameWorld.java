@@ -13,6 +13,7 @@ public class GameWorld extends World
     int surplusSoldiers;
     int[] planets;
     int[] soldiers;
+    
     SpaceShip s=new SpaceShip();
 
     /**
@@ -33,6 +34,8 @@ public class GameWorld extends World
      addObject(new HomePlanet(),150,460);
      addObject(new AlienPlanet(),660,100);
      addObject(new AlienPlanet(),660,500);
+     addObject(new AlienPlanet(),1060,100);
+     addObject(new AlienPlanet(),1060,500);
      addObject(new Aliens(),660, 100);
      addObject(new Aliens(),660, 500);
      addObject(new Soldier(),150,300);

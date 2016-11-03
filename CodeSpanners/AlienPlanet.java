@@ -6,13 +6,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class AlienPlanet extends Actor implements Planet
+public class AlienPlanet extends Planet 
 {
     boolean isBlue;
     int weight[];
     int planetNumber;
     boolean drag=false;
-    GifImage planet= new GifImage("alienPlanet1.gif");
+    //GifImage planet= new GifImage("alienPlanet.png");
     int rx=0;
     int ry=0;
     //Actor alien = getOneObjectAtOffset(0,0, Aliens.class);  
@@ -22,7 +22,7 @@ public class AlienPlanet extends Actor implements Planet
      */
 
     public AlienPlanet(){
-   
+        this.getImage().scale(150,150);
     }
     public void act() 
     {
@@ -49,7 +49,7 @@ public class AlienPlanet extends Actor implements Planet
             s.setLocation(a.getX(),a.getY());*/
         
         }
-        setImage(planet.getCurrentImage());
+        //setImage(planet.getCurrentImage());
         capture();
     // Greenfoot.delay(100);
     // world.removeObject(alien);
