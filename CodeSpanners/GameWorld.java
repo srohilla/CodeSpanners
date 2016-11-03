@@ -13,6 +13,7 @@ public class GameWorld extends World
     int surplusSoldiers;
     int[] planets;
     int[] soldiers;
+    Planet[][] planet=new Planet[3][4];
     
     SpaceShip s=new SpaceShip();
 
@@ -22,7 +23,11 @@ public class GameWorld extends World
      */
     public GameWorld()
     {     super(3000, 1000, 1);
-          
+          planet[1][0]=new HomePlanet();
+          planet[0][1]=new AlienPlanet();
+          planet[0][2]=new AlienPlanet();
+          planet[1][1]=new AlienPlanet();
+          planet[1][2]=new AlienPlanet();
           prepare();
        
     }
@@ -31,11 +36,13 @@ public class GameWorld extends World
     }
     void prepare(){
      addObject(new Asteroids(),240,160);
-     addObject(new HomePlanet(),150,460);
-     addObject(new AlienPlanet(),660,100);
-     addObject(new AlienPlanet(),660,500);
-     addObject(new AlienPlanet(),1060,100);
-     addObject(new AlienPlanet(),1060,500);
+     addObject(planet[1][0],150,460);
+     addObject(planet[0][1],660,100);
+     addObject(planet[0][2],1060,100);
+     addObject(planet[1][1],660,500);
+     addObject(planet[1][2],1060,500);
+     
+     
      addObject(new Aliens(),660, 100);
      addObject(new Aliens(),660, 500);
      addObject(new Soldier(),150,300);
