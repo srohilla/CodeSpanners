@@ -14,7 +14,7 @@ public class GameWorld extends World
     int[] planets;
     int[] soldiers;
     Planet[][] planet=new Planet[3][4];
-    
+    Marker marker=new Marker();
     SpaceShip s=new SpaceShip();
 
     /**
@@ -34,6 +34,9 @@ public class GameWorld extends World
     SpaceShip getSpaceShip(){
         return s;
     }
+    Marker getMarker(){
+        return marker;
+    }
     void prepare(){
      addObject(new Asteroids(),240,160);
      addObject(planet[1][0],150,460);
@@ -47,6 +50,7 @@ public class GameWorld extends World
      addObject(new Aliens(),660, 500);
      addObject(new Soldier(),150,300);
      addObject(s,200,460);
+     planet[1][0].onPlanet();
     }
     void submitScores(){
     //to do
