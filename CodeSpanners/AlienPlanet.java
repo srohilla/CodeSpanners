@@ -15,6 +15,7 @@ public class AlienPlanet extends Planet
     //GifImage planet= new GifImage("alienPlanet.png");
     int rx=0;
     int ry=0;
+    
     //Actor alien = getOneObjectAtOffset(0,0, Aliens.class);  
     /**
      * Act - do whatever the AlienPlanet wants to do. This method is called whenever
@@ -29,7 +30,7 @@ public class AlienPlanet extends Planet
    // World world = getWorld();     
         // Add your action code here.
      
-     if(Greenfoot.mouseDragged(this)){
+     /*if(Greenfoot.mouseDragged(this)){
          MouseInfo m=Greenfoot.getMouseInfo();
             if(!drag){
                 drag=true;
@@ -41,14 +42,14 @@ public class AlienPlanet extends Planet
             if(Greenfoot.mouseDragEnded(this)){
                 drag=false;
             }
-            /*
+            
             System.out.println("Insise");
             Actor a=Greenfoot.getMouseInfo().getActor();
             GameWorld g=(GameWorld) getWorld();
             SpaceShip s=g.getSpaceShip();
-            s.setLocation(a.getX(),a.getY());*/
+            s.setLocation(a.getX(),a.getY());
         
-        }
+        }*/
         //setImage(planet.getCurrentImage());
         capture();
     // Greenfoot.delay(100);
@@ -60,12 +61,12 @@ public class AlienPlanet extends Planet
     {
     //to do
     
-    World world = getWorld(); 
+    
     Actor alien = getOneObjectAtOffset(0,0, Aliens.class); 
     Greenfoot.delay(100);
-    world.removeObject(alien);
-    world.addObject(new Soldier(),660,100);
-    world.addObject(new Soldier(),660,500);
+    getWorld().removeObject(alien);
+    getWorld().addObject(new Soldier(),660,100);
+    getWorld().addObject(new Soldier(),660,500);
     
     }
     
