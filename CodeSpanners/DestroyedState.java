@@ -4,6 +4,8 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
+
+/*This state shall update upon the interaction bewteen actor and the destroyable objects*/
 public class DestroyedState implements DestroyableObjectsState
 {
   
