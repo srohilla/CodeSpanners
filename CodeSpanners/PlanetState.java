@@ -6,5 +6,8 @@
  */
 public interface PlanetState  
 {
+    public void appear();
+    
+    public void disappear();
     
 }
