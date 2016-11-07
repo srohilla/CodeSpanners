@@ -13,6 +13,14 @@ public class OriginalState implements PlanetState
     public OriginalState()
     {
     }
+    
+    public void appear(){
+        //TODO
+    }
+    
+    public void disappear(){
+        //TODO
+    }
 
     
 }

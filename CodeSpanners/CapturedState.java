@@ -14,6 +14,14 @@ public class CapturedState implements PlanetState
     public CapturedState()
     {
     }
+    
+    public void appear(){
+        //TODO
+    }
+    
+    public void disappear(){
+        //TODO
+    }
 
 
 }
