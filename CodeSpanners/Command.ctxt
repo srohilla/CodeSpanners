@@ -2,4 +2,6 @@
 comment0.target=Command
 comment1.params=
 comment1.target=void\ execute()
-numComments=2
+comment2.params=r
+comment2.target=void\ setReceiver(Receiver)
+numComments=3
