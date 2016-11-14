@@ -23,10 +23,16 @@ public class AlienPlanet extends Planet
      */
 
     public AlienPlanet(){
-        this.getImage().scale(150,150);
+  //      this.getImage().scale(50,50);
     }
     public void act() 
     {
+         GameWorld g=(GameWorld) getWorld();
+        SpaceShip s=g.getSpaceShip();
+         if(Greenfoot.mouseClicked(this))
+         {
+             s.move= true;
+         }
    // World world = getWorld();     
         // Add your action code here.
      
