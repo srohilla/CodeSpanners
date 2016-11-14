@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=PlayButton
+comment1.params=title
+comment1.target=PlayButton(java.lang.String)
+comment2.params=
+comment2.target=void\ invoke()
+comment3.params=c
+comment3.target=void\ setCommand(Command)
+numComments=4
