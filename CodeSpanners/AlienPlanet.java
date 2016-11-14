@@ -12,7 +12,7 @@ public class AlienPlanet extends Planet
     int weight[];
     int planetNumber;
     boolean drag=false;
-    //GifImage planet= new GifImage("alienPlanet.png");
+    GifImage planet= new GifImage("alienPlanet1.gif");
     int rx=0;
     int ry=0;
     
@@ -23,10 +23,16 @@ public class AlienPlanet extends Planet
      */
 
     public AlienPlanet(){
-        this.getImage().scale(150,150);
+  //      this.getImage().scale(50,50);
     }
     public void act() 
     {
+         GameWorld g=(GameWorld) getWorld();
+        SpaceShip s=g.getSpaceShip();
+         if(Greenfoot.mouseClicked(this))
+         {
+             s.move= true;
+         }
    // World world = getWorld();     
         // Add your action code here.
      
@@ -51,10 +57,10 @@ public class AlienPlanet extends Planet
         
         }*/
         //setImage(planet.getCurrentImage());
-        capture();
+      //  capture();
     // Greenfoot.delay(100);
     // world.removeObject(alien);
-    
+    setImage(planet.getCurrentImage());
     }    
     
     public void capture()
