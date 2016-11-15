@@ -1,7 +1,19 @@
 #BlueJ class context
 comment0.target=Button
-comment0.text=\n\ Write\ a\ description\ of\ class\ Button\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ Button\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-numComments=2
+comment0.text=\r\n\ An\ object\ you\ can\ click\ on,\ and\ something\ will\ happen...\r\n\ \r\n\ @author\ Rucha\r\n\ @version\ 1.0\r\n
+comment1.params=title
+comment1.target=Button(java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ the\ class\ Button\r\n
+comment2.params=
+comment2.target=void\ putTextOnImage()
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\r\n\ Check\ for\ clicks\ on\ the\ button.\r\n
+comment4.params=c1
+comment4.target=void\ setCommand(Command)
+comment5.params=
+comment5.target=void\ invoke()
+comment6.params=
+comment6.target=java.lang.String\ getTitle()
+comment6.text=\r\n\ Returns\ the\ title\ of\ the\ button.\r\n
+numComments=7

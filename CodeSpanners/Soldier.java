@@ -14,7 +14,7 @@ public class Soldier extends Actor implements movableObjects
     public Soldier()
     {
         GreenfootImage image = getImage() ;
-        image.scale(150,150) ;
+        image.scale(50,60) ;
     }
     
     public void act() 
