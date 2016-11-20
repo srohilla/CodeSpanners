@@ -8,24 +8,16 @@ import greenfoot.*;
  */
 public class SpaceShip extends Actor implements movableObjects
 {
-    int startPlanetId;
-    int end;
-  
-    int mouseX, mouseY ;
-    public SpaceShip(int id)
-    {   startPlanetId=id;
+   
+    public SpaceShip()
+    {   
         GreenfootImage image = getImage() ;
         image.scale(100,80) ;
     }
     public void act() 
     {
         
-        if(Greenfoot.mouseDragged(this)) {          
-            MouseInfo mouse = Greenfoot.getMouseInfo();  
-            mouseX=mouse.getX();  
-            mouseY=mouse.getY();  
-            setLocation(mouseX, mouseY);  
-        }
+    //
        
     }  
     

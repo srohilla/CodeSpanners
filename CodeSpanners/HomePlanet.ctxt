@@ -10,6 +10,4 @@ comment3.target=void\ act()
 comment3.text=\n\ Act\ -\ do\ whatever\ the\ HomePlanet\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment4.params=
 comment4.target=void\ capture()
-comment5.params=
-comment5.target=SpaceShip\ getSpaceship()
-numComments=6
+numComments=5

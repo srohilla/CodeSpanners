@@ -32,33 +32,33 @@ public class HomePlanet extends Planet
     
     public void act() 
     {
-           
+        
         capture();
         setImage(planet.getCurrentImage());
     } 
     
     public void capture()
-    {
-    // if(Greenfoot.mouseClicked(this))
-      //   {   
-              
-             GameWorld g=(GameWorld) getWorld();
-            // SpaceShip s=getSpaceship();
+    { GameWorld g=(GameWorld) getWorld();
+          
+              if(Greenfoot.mouseClicked(this))
+         {   
              
-             //g.addObject(s,xLoc,yLoc);
-            // s.travel(xLoc,yLoc);
+           
+             g.selectedPlanetId=planetNumber;
+             g.isSourceSelected=true;
+             System.out.println("selected id:"+g.selectedPlanetId);
+             
+            
+         }
+            
             Set<Integer> keys=neighbourMatrix.keySet();
             for(Integer k:keys){
-             g.check(k);
-       //  }
+             g.activateNeighbour(k);
+       
     }
     
  
     
     }
-    public SpaceShip getSpaceship(){
-    SpaceShip ss=new SpaceShip(planetNumber);
-    return ss;
    
-    }   
 }

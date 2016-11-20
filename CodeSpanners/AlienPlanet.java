@@ -13,8 +13,8 @@ public class AlienPlanet extends Planet
    GreenfootImage textImage = new GreenfootImage(String.valueOf(planetNumber), 24, new Color(0, 255, 128), new Color(0, 0, 0, 0));
    GreenfootImage image = new GreenfootImage(textImage.getWidth()+12, 36);GifImage planet= new GifImage("alienPlanet1.gif");
    Rocket s=getRocket();
-
-    
+   
+   
     
     //Actor alien = getOneObjectAtOffset(0,0, Aliens.class);  
     /**
@@ -38,22 +38,29 @@ public class AlienPlanet extends Planet
          image.setColor(new Color(0, 0, 196));
          image.fillRect(3, 3, image.getWidth()-6, 30);
          image.drawImage(textImage, xLoc, yLoc);
-       //  Message m=new Message(planetNumber);
-        // GameWorld g=(GameWorld) getWorld();
-      //   g.addObject(m,xLoc-10,yLoc-5);
-  //      this.getImage().scale(50,50);
+     
     }
     public void act() 
-    {  
+    {   GameWorld g=(GameWorld) getWorld();
+        if(g.getMaxFuel()<= 0)
+        {
+             Greenfoot.setWorld(new Over());
+        }
+        else if(g.checkAllCaptured()){
+            Greenfoot.stop();
+        }
+        else
+        {
+            capture();
+            setImage(planet.getCurrentImage());
+            
          
-     capture();
-    // selection();
-    setImage(planet.getCurrentImage());
+        }
     }    
     
     public void capture()
-    {     GameWorld g=(GameWorld) getWorld();
-      
+    {     
+      GameWorld g=(GameWorld) getWorld();
          
          if(Greenfoot.mouseClicked(this))
          {   if(isClickable){
@@ -71,35 +78,23 @@ public class AlienPlanet extends Planet
            
              isCaptured=true;
              g.addObject(s,xLoc,yLoc);
-             System.out.println("planet count :"+g.noOfPlanetsCaptured);
              g.updatePlanetCount();
              
              int wieght=neighbourMatrix.get(g.selectedPlanetId);
              g.updateScore(wieght);
-             System.out.println("now score :"+g.score);
              g.isSourceSelected=false;
-             //alienDestroy();
-            // s.travel(xLoc,yLoc);
             Set<Integer> keys=neighbourMatrix.keySet();
             for(Integer k:keys){
-           
-             g.check(k);
-            
+             g.activateNeighbour(k);
             
             }
-            }else{
-            Message m=new Message();
-            g.addObject(m,190,190);
-            m.setText("Ohh shittts");
-        }
+            }
             
-         }}
+         }
+        }
         
     }
-    public void selection(){
-    
-    }
-    
+  
   public Rocket getRocket(){
     Rocket ss=new Rocket(planetNumber);
     return ss;
@@ -111,9 +106,6 @@ public class AlienPlanet extends Planet
     g.addObject(new Aliens(),xLoc, yLoc);
     }  
     
-public void alienDestroy(){
-    GameWorld g=(GameWorld) getWorld();
-    //g.removeObject(new Aliens(),xLoc, yLoc);
-}    
+    
    
 }

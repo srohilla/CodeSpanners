@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Font;
+import java.awt.Color;
 /**
  * The meesage class is designed to be used as a framework to display various text messages
  * 
@@ -21,11 +22,14 @@ public class Message extends Actor
     
     public void setText(String msg){ 
        
+        int score =Integer.parseInt(msg)*10;
         img = getImage();
         img.clear();
         img.setColor( java.awt.Color.GREEN); 
-        img.fill();
+        img.fillRect(0,0,score,100);
         img.setColor( java.awt.Color.RED);
+        img.fillRect(score,0,100,100);
+        img.setColor( java.awt.Color.WHITE);
         img.setFont(new java.awt.Font("Default", java.awt.Font.PLAIN, 40));
         img.drawString(msg, 0, 40); 
     }
