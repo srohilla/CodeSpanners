@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class HomePlanet here.
  * 
@@ -9,17 +9,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class HomePlanet extends Planet
 {
     GifImage planet= new GifImage("planet.gif");
-   String name;
     
-    public HomePlanet(String s)
+    public HomePlanet()
     {
-       super.path.add(this);
-        name=s;
-        super.isVisited=true;
-       setImage(planet.getCurrentImage());
-       getImage().scale(200,200);
+       
+     //   this.getImage().scale(2000,2000);
     }
+    public HomePlanet(int planetNumber,HashMap<Integer,Integer> adjMatrix,int xLoc,int yLoc){
+     super();
+        this.xLoc=xLoc;
+        this.yLoc=yLoc;
+        this.planetNumber=planetNumber;
+        this.neighbourMatrix=adjMatrix;
+        this.isClickable=true;
+        this.isCaptured=true;
     
+    }
     /**
      * Act - do whatever the HomePlanet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -27,12 +32,33 @@ public class HomePlanet extends Planet
     
     public void act() 
     {
-        // Add your action code here.
-       // getWorld().addObject(new Marker(),550,100);
-         GameWorld g=(GameWorld) getWorld();
-        
-        if(Greenfoot.mouseClicked(this) && super.isVisited){
-            g.setPlanet(name);
-        }
-    }    
+           
+        capture();
+        setImage(planet.getCurrentImage());
+    } 
+    
+    public void capture()
+    {
+    // if(Greenfoot.mouseClicked(this))
+      //   {   
+              
+             GameWorld g=(GameWorld) getWorld();
+            // SpaceShip s=getSpaceship();
+             
+             //g.addObject(s,xLoc,yLoc);
+            // s.travel(xLoc,yLoc);
+            Set<Integer> keys=neighbourMatrix.keySet();
+            for(Integer k:keys){
+             g.check(k);
+       //  }
+    }
+    
+ 
+    
+    }
+    public SpaceShip getSpaceship(){
+    SpaceShip ss=new SpaceShip(planetNumber);
+    return ss;
+   
+    }   
 }
