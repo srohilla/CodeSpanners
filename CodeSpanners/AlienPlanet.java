@@ -17,6 +17,7 @@ public class AlienPlanet extends Planet
     int ry=0;
     String name;
     
+
     //Actor alien = getOneObjectAtOffset(0,0, Aliens.class);  
     /**
      * Act - do whatever the AlienPlanet wants to do. This method is called whenever
@@ -25,11 +26,11 @@ public class AlienPlanet extends Planet
 
     public AlienPlanet(String s){
   //      this.getImage().scale(50,50);
-   name=s;
+        name=s;
     }
     public void act() 
     {
-        GameWorld g=(GameWorld) getWorld();
+            GameWorld g=(GameWorld) getWorld();
              SpaceShip s=g.getSpaceShip();
         
         if(Greenfoot.mouseClicked(this) && !super.isVisited)
@@ -42,14 +43,14 @@ public class AlienPlanet extends Planet
             /* for(int i=g.planet[Integer.parseInt(g.atPlanet.substring(0,1))][Integer.parseInt(g.atPlanet.substring(1))].path.size()-1;i>=0;i--){
                  super.path.add(g.planet[Integer.parseInt(g.atPlanet.substring(0,1))][Integer.parseInt(g.atPlanet.substring(1))].path.get(i));
                 } */
-             //s.setDestination(super.path);
+             s.setDestination(super.path);
              super.isVisited=true;
              g.setPlanet(name);
          }else if(Greenfoot.mouseClicked(this) && super.isVisited){
              g.setPlanet(name);
             }
          
-   // World world = getWorld();     
+   // World world = getWorld();    
         // Add your action code here.
      
      /*if(Greenfoot.mouseDragged(this)){
@@ -76,7 +77,7 @@ public class AlienPlanet extends Planet
       //  capture();
     // Greenfoot.delay(100);
     // world.removeObject(alien);
-    setImage(planet.getCurrentImage());
+    //setImage(planet.getCurrentImage());
     }    
     
     public void capture()

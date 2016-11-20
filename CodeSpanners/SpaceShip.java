@@ -1,5 +1,5 @@
 import greenfoot.*; 
- 
+ import java.util.*;
 /**
  * Write a description of class SpaceShip here.
  * 
@@ -8,36 +8,72 @@ import greenfoot.*;
  */
 public class SpaceShip extends Actor implements movableObjects
 {
-    int start;
+     int start;
     int end;
     public boolean move;
     int mouseX, mouseY ;
+    int dX;
+    int dY;
+    GameWorld g=(GameWorld) getWorld();
+    boolean signal=true;
     public SpaceShip()
     {
         GreenfootImage image = getImage() ;
         image.scale(100,80) ;
+        dX=120;
+        dY=400;
     }
     public void act() 
     {
         
-        if(Greenfoot.mouseDragged(this)) {          
-            MouseInfo mouse = Greenfoot.getMouseInfo();  
-            mouseX=mouse.getX();  
-            mouseY=mouse.getY();  
-            setLocation(mouseX, mouseY);  
+        while(this.getX()!=this.dX || this.getY()!=dY){
+                if(this.dX>this.getX()){
+                     
+                    setLocation(getX()+1,getY());
+                    }
+                    if(this.dX<this.getX()){
+                    setLocation(getX()-1,getY());
+                    }
+                   if(this.dY>this.getY()){
+                    setLocation(getX(),getY()+1);
+                    }
+                    if(this.dY<this.getY()){
+                    setLocation(getX(),getY()-1);
+                    }
+                    if(this.getX()==this.dX && this.getY()==dY){
+                        signal=false;
+                    }
+                    Greenfoot.delay(1);
+               }
+            }
+    public void setDestination(ArrayList<Planet> a){
+       for(Planet p:a){
+            while(signal){
+                dX=p.getX();
+                dY=p.getY();
+                act();
+                if(this.getX()==this.dX && this.getY()==dY){
+                        signal=false;
+                    }
+            }
+            
+            Greenfoot.delay(10);
+            signal=true;
         }
-        // Add your action code here.
-        if(move)
-        {
-             if(getY()<380 && getX()<380 )
-             {
-                // setRotation((int) (180*Math.atan2(380 - getY(), 380 - getX()) / Math.PI));
-                 move(1);
-                 setLocation(getX()+ 10, getY()-10);
-             }
-        }
-    }  
-    
+
+        for(int i=a.size()-2;i>=0;i--){
+            while(signal){
+                dX=a.get(i).getX();
+                dY=a.get(i).getY();
+                act();
+                if(this.getX()==this.dX && this.getY()==dY){
+                        signal=false;
+                    }
+            }
+            Greenfoot.delay(10);
+            signal=true;
+        } 
+    }
     public void appear()
     {
         //To do code
