@@ -28,14 +28,14 @@ public class GameWorld extends World
     public GameWorld()
     {      super(2000, 780, 1);
          planet[1][0] =new HomePlanet();
-         planet[0][1]=new AlienPlanet();
-         planet[2][1]=new AlienPlanet();
-         planet[0][2]=new AlienPlanet();
-         planet[1][2]=new AlienPlanet();
-         planet[2][2]=new AlienPlanet();
-         planet[0][3]=new AlienPlanet();
-         planet[2][3]=new AlienPlanet();
-         planet[1][4]=new AlienPlanet();
+         planet[0][1]=new AlienPlanet("01");
+         planet[2][1]=new AlienPlanet("21");
+         planet[0][2]=new AlienPlanet("02");
+         planet[1][2]=new AlienPlanet("12");
+         planet[2][2]=new AlienPlanet("22");
+         planet[0][3]=new AlienPlanet("03");
+         planet[2][3]=new AlienPlanet("23");
+         planet[1][4]=new AlienPlanet("14");
          addObject(planet[1][0],120,400);
      addObject(planet[0][1],340,120);
      addObject(planet[2][1],300,580);

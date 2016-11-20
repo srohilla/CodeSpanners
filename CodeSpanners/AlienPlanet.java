@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class AlienPlanet here.
  * 
@@ -15,6 +15,7 @@ public class AlienPlanet extends Planet
     GifImage planet= new GifImage("alienPlanet1.gif");
     int rx=0;
     int ry=0;
+    String name;
     
     //Actor alien = getOneObjectAtOffset(0,0, Aliens.class);  
     /**
@@ -22,11 +23,31 @@ public class AlienPlanet extends Planet
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
 
-    public AlienPlanet(){
+    public AlienPlanet(String s){
   //      this.getImage().scale(50,50);
+   name=s;
     }
     public void act() 
     {
+        GameWorld g=(GameWorld) getWorld();
+             SpaceShip s=g.getSpaceShip();
+        
+        if(Greenfoot.mouseClicked(this) && !super.isVisited)
+         {  
+             for(Planet p:g.planet[Integer.parseInt(g.atPlanet.substring(0,1))][Integer.parseInt(g.atPlanet.substring(1))].path){
+                 super.path.add(p);
+            }
+            
+             super.path.add(this);
+            /* for(int i=g.planet[Integer.parseInt(g.atPlanet.substring(0,1))][Integer.parseInt(g.atPlanet.substring(1))].path.size()-1;i>=0;i--){
+                 super.path.add(g.planet[Integer.parseInt(g.atPlanet.substring(0,1))][Integer.parseInt(g.atPlanet.substring(1))].path.get(i));
+                } */
+             //s.setDestination(super.path);
+             super.isVisited=true;
+             g.setPlanet(name);
+         }else if(Greenfoot.mouseClicked(this) && super.isVisited){
+             g.setPlanet(name);
+            }
          
    // World world = getWorld();     
         // Add your action code here.
