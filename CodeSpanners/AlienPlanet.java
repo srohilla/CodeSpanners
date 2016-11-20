@@ -77,7 +77,7 @@ public class AlienPlanet extends Planet
             
            
              isCaptured=true;
-             g.addObject(s,xLoc,yLoc);
+             g.addObject(s,xLoc,yLoc-40);
              g.updatePlanetCount();
              
              int wieght=neighbourMatrix.get(g.selectedPlanetId);
