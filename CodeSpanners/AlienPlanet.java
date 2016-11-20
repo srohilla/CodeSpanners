@@ -27,12 +27,7 @@ public class AlienPlanet extends Planet
     }
     public void act() 
     {
-         GameWorld g=(GameWorld) getWorld();
-        SpaceShip s=g.getSpaceShip();
-         if(Greenfoot.mouseClicked(this))
-         {
-             s.move= true;
-         }
+         
    // World world = getWorld();     
         // Add your action code here.
      
