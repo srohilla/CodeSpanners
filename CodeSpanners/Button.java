@@ -4,7 +4,7 @@ import java.awt.Color;
 /**
  * An object you can click on, and something will happen...
  * 
- * @author Seema
+ * @author Rucha
  * @version 1.0
  */
 public class Button extends Actor implements Invoker
