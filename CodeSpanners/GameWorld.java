@@ -92,6 +92,8 @@ public class GameWorld extends World
      addObject(new Asteroids(),420,190);
      addObject(new Asteroids(),440,200);
      addObject(new Asteroids(),450,210);
+     addObject(new Asteroids(),550,130);
+     
   
      addObject(home,120,400);
      addObject(spaceship,120,350);        
