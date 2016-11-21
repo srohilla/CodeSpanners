@@ -69,13 +69,13 @@ public class AlienPlanet extends Planet
            
              g.selectedPlanetId=planetNumber;
              g.isSourceSelected=true;
-             System.out.println("selected id:"+g.selectedPlanetId);
+            
              
             
          }
              else if((!isCaptured)&&(g.isSourceSelected)&&(neighbourMatrix.containsKey(g.selectedPlanetId))){
             
-           
+           Greenfoot.playSound("explosion.wav"); 
              isCaptured=true;
              g.addObject(s,xLoc,yLoc-40);
              g.updatePlanetCount();
