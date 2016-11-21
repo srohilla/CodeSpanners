@@ -9,7 +9,7 @@ public class ServerApplication extends Application {
 	@Override
 	public synchronized Restlet createInboundRoot() {
 		Router router = new Router(getContext());
-		router.attach("/scores", FirstServerResource.class);
+		router.attach("/scores", ServerResource.class);
 		return router;
 	}
 
