@@ -92,11 +92,14 @@ public class GameWorld extends World
      addObject(new Asteroids(),420,190);
      addObject(new Asteroids(),440,200);
      addObject(new Asteroids(),450,210);
-     addObject(new Asteroids(),550,130);
-     addObject(new Asteroids(),200,500);
-     addObject(new Asteroids(),180,510);
-     addObject(new Asteroids(),220,480);
-     addObject(new Asteroids(),160,490);
+     addObject(new Asteroids(),550,130); ////between 5 and 1
+     addObject(new Asteroids(),200,500);//between h and 2
+     addObject(new Asteroids(),180,510);//between h and 2
+     addObject(new Asteroids(),220,480);//between h and 2
+     addObject(new Asteroids(),160,490); //between h and 2
+     addObject(new Asteroids(),500,570); //between 2 and 4
+     addObject(new Asteroids(),510,590); //between 2 and 4
+     addObject(new Asteroids(),490,600); //between 2 and 4
      
   
      addObject(home,120,400);
