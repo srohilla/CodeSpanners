@@ -1,7 +1,7 @@
 package com.codespartans;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.bson.Document;
 
@@ -10,25 +10,22 @@ import com.mongodb.Block;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;;
 
 public class ScoresRetrieverImpl implements ScoresRetriever {
 
 	@Override
-	public List<Score> getScores() {
-		// TODO Auto-generated method stub
+	public Map<String, String> getScores() {
 		MongoClient mongo = new MongoClient(new MongoClientURI("mongodb://localhost:27017"));
 		MongoDatabase db = mongo.getDatabase("codeSpartans");
+
 		FindIterable<Document> iterable = db.getCollection("highscores").find();
-		List<Score> highscores = new ArrayList<Score>();
-		int count = 0;
+		Map<String, String> highscores = new HashMap<String, String>();
 		iterable.forEach(new Block<Document>() {
 			@Override
 			public void apply(final Document document) {
-				Score score = new Score();
-				score.setUsername(document.get("username").toString());
-				score.setHighscore(document.get("highscore").toString());
-				highscores.add(score);
+				highscores.put(document.get("username").toString(), document.get("highscore").toString());
 			}
 		});
 
@@ -37,9 +34,27 @@ public class ScoresRetrieverImpl implements ScoresRetriever {
 	}
 
 	@Override
-	public void setScores() {
-		// TODO Auto-generated method stub
+	public Map<String, String> setScores(Score score) {
+		MongoClient mongo = new MongoClient(new MongoClientURI("mongodb://localhost:27017"));
+		MongoDatabase db = mongo.getDatabase("codeSpartans");
+		Map<String, Object> scores = new HashMap<String, Object>();
+		scores.put("username", score.getUsername());
+		scores.put("highscore", score.getHighscore());
+		Document doc = new Document(scores);
+		MongoCollection<Document> collection = db.getCollection("highscores");
+		collection.insertOne(doc);
 
+		FindIterable<Document> iterable = collection.find();
+		Map<String, String> highscores = new HashMap<String, String>();
+		iterable.forEach(new Block<Document>() {
+			@Override
+			public void apply(final Document document) {
+				highscores.put(document.get("username").toString(), document.get("highscore").toString());
+			}
+		});
+
+		// mongo.close();
+		return highscores;
 	}
 
 }
