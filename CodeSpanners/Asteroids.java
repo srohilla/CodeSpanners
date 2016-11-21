@@ -15,7 +15,8 @@ public class Asteroids extends Actor implements DestroyableObjects
     int counter = -1;
     public void act() 
     {
-        counter = (counter +1) % 10;
+        setLocation(getX(), getY());
+    /*    counter = (counter +1) % 10;
         if(counter < 5)
         {
             setLocation(getX(), getY() + 5);
@@ -24,10 +25,11 @@ public class Asteroids extends Actor implements DestroyableObjects
         {
             setLocation(getX(), getY() - 5);
         }
+        */
     }
     public Asteroids(){
         GreenfootImage image = getImage() ;
-        image.scale(70,60) ;
+        image.scale(30,30) ;
         
     }
     public void explode()

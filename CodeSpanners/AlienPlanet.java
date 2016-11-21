@@ -1,4 +1,6 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
+import java.util.*;
+import java.awt.Color;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class AlienPlanet here.
@@ -8,13 +10,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class AlienPlanet extends Planet 
 {
-    boolean isBlue;
-    int weight[];
-    int planetNumber;
-    boolean drag=false;
-    GifImage planet= new GifImage("alienPlanet1.gif");
-    int rx=0;
-    int ry=0;
+   GreenfootImage textImage = new GreenfootImage(String.valueOf(planetNumber), 24, new Color(0, 255, 128), new Color(0, 0, 0, 0));
+   GreenfootImage image = new GreenfootImage(textImage.getWidth()+12, 36);GifImage planet= new GifImage("alienPlanet1.gif");
+   Rocket s=getRocket();
+   
+   
     
     //Actor alien = getOneObjectAtOffset(0,0, Aliens.class);  
     /**
@@ -23,61 +23,89 @@ public class AlienPlanet extends Planet
      */
 
     public AlienPlanet(){
+        super();
+        
   //      this.getImage().scale(50,50);
     }
-    public void act() 
-    {
-         GameWorld g=(GameWorld) getWorld();
-        SpaceShip s=g.getSpaceShip();
-         if(Greenfoot.mouseClicked(this))
-         {
-             s.move= true;
-         }
-   // World world = getWorld();     
-        // Add your action code here.
+    public AlienPlanet(int planetNumber,HashMap<Integer,Integer> adjMatrix,int xLoc,int yLoc){
+        super();
+        this.xLoc=xLoc;
+        this.yLoc=yLoc;
+        this.planetNumber=planetNumber;
+        this.neighbourMatrix=adjMatrix;
+         image.setColor(new Color(196, 196, 0));
+         image.fill();
+         image.setColor(new Color(0, 0, 196));
+         image.fillRect(3, 3, image.getWidth()-6, 30);
+         image.drawImage(textImage, xLoc, yLoc);
      
-     /*if(Greenfoot.mouseDragged(this)){
-         MouseInfo m=Greenfoot.getMouseInfo();
-            if(!drag){
-                drag=true;
-                rx=getX()-m.getX();
-                ry=getY()-m.getY();
-            }else{
-                setLocation(m.getX()+rx,m.getY()+ry);
-            }
-            if(Greenfoot.mouseDragEnded(this)){
-                drag=false;
-            }
+    }
+    public void act() 
+    {   GameWorld g=(GameWorld) getWorld();
+        if(g.getMaxFuel()<= 0)
+        {
+             Greenfoot.setWorld(new Over());
+        }
+        else if(g.checkAllCaptured()){
+            Greenfoot.stop();
+        }
+        else
+        {
+            capture();
+            setImage(planet.getCurrentImage());
             
-            System.out.println("Insise");
-            Actor a=Greenfoot.getMouseInfo().getActor();
-            GameWorld g=(GameWorld) getWorld();
-            SpaceShip s=g.getSpaceShip();
-            s.setLocation(a.getX(),a.getY());
-        
-        }*/
-        //setImage(planet.getCurrentImage());
-      //  capture();
-    // Greenfoot.delay(100);
-    // world.removeObject(alien);
-    setImage(planet.getCurrentImage());
+         
+        }
     }    
     
     public void capture()
-    {
-    //to do
-    
-    
-    Actor alien = getOneObjectAtOffset(0,0, Aliens.class); 
-    Greenfoot.delay(100);
-    getWorld().removeObject(alien);
-    getWorld().addObject(new Soldier(),660,100);
-    getWorld().addObject(new Soldier(),660,500);
-    
-    }
-    
-    public void uncapture()
-    {
+    {     
+      GameWorld g=(GameWorld) getWorld();
+         
+         if(Greenfoot.mouseClicked(this))
+         {   if(isClickable){
+             if(isCaptured){
+             
+           
+             g.selectedPlanetId=planetNumber;
+             g.isSourceSelected=true;
+             System.out.println("selected id:"+g.selectedPlanetId);
+             
+            
+         }
+             else if((!isCaptured)&&(g.isSourceSelected)&&(neighbourMatrix.containsKey(g.selectedPlanetId))){
+            
+           
+             isCaptured=true;
+             g.addObject(s,xLoc,yLoc-40);
+             g.updatePlanetCount();
+             
+             int wieght=neighbourMatrix.get(g.selectedPlanetId);
+             g.updateScore(wieght);
+             g.isSourceSelected=false;
+            Set<Integer> keys=neighbourMatrix.keySet();
+            for(Integer k:keys){
+             g.activateNeighbour(k);
+            
+            }
+            }
+            
+         }
+        }
         
     }
+  
+  public Rocket getRocket(){
+    Rocket ss=new Rocket(planetNumber);
+    return ss;
+   
+    } 
+    
+ public void alienGrow(){
+    GameWorld g=(GameWorld) getWorld();
+    g.addObject(new Aliens(),xLoc, yLoc);
+    }  
+    
+    
+   
 }

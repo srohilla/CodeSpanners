@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class HomePlanet here.
  * 
@@ -15,7 +15,16 @@ public class HomePlanet extends Planet
        
      //   this.getImage().scale(2000,2000);
     }
+    public HomePlanet(int planetNumber,HashMap<Integer,Integer> adjMatrix,int xLoc,int yLoc){
+     super();
+        this.xLoc=xLoc;
+        this.yLoc=yLoc;
+        this.planetNumber=planetNumber;
+        this.neighbourMatrix=adjMatrix;
+        this.isClickable=true;
+        this.isCaptured=true;
     
+    }
     /**
      * Act - do whatever the HomePlanet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -23,8 +32,33 @@ public class HomePlanet extends Planet
     
     public void act() 
     {
-        // Add your action code here.
-       // getWorld().addObject(new Marker(),550,100);
+        
+        capture();
         setImage(planet.getCurrentImage());
-    }    
+    } 
+    
+    public void capture()
+    { GameWorld g=(GameWorld) getWorld();
+          
+              if(Greenfoot.mouseClicked(this))
+         {   
+             
+           
+             g.selectedPlanetId=planetNumber;
+             g.isSourceSelected=true;
+             System.out.println("selected id:"+g.selectedPlanetId);
+             
+            
+         }
+            
+            Set<Integer> keys=neighbourMatrix.keySet();
+            for(Integer k:keys){
+             g.activateNeighbour(k);
+       
+    }
+    
+ 
+    
+    }
+   
 }
