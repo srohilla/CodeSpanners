@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
+import javax.swing.JOptionPane;
 /**
  * Write a description of class MyWorld here.
  * 
@@ -81,13 +82,11 @@ public class GameWorld extends World
     {
      // addObject(r,240,160);
         //adding asteroid
-        
-     addObject(new Asteroids(),240,160);
-     addObject(new Asteroids(),250,170);
-     addObject(new Asteroids(),230,180);
-     addObject(new Asteroids(),240,160);
-     addObject(new Asteroids(),250,170);
-     addObject(new Asteroids(),230,180);
+     String inputValue = JOptionPane.showInputDialog("Please Enter Your Name Spartan !");   
+     addObject(new Asteroids(),230,180);//between home and 1
+     addObject(new Asteroids(),180,230);//between home and 1
+     addObject(new Asteroids(),160,270);//between home and 1
+     
      addObject(new Asteroids(),430,180);
      addObject(new Asteroids(),420,190);
      addObject(new Asteroids(),440,200);
@@ -117,7 +116,7 @@ public class GameWorld extends World
     // addObject(m,670,450);
      Greenfoot.playSound("background.wav"); 
 
-     addObject(currentScore,160,20);
+     addObject(currentScore,300,20);
      currentScore.setText(String.valueOf(maxFuel));
 
 
@@ -135,7 +134,7 @@ public class GameWorld extends World
         AlienPlanet p=(AlienPlanet)universeMatrix.get(key);
         if(!p.isCaptured){  
          p.isClickable=true;
-       //  p.alienGrow();
+         p.alienGrow();
     }
     }    
     public void updatePlanetCount(){

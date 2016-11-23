@@ -13,7 +13,7 @@ public class AlienPlanet extends Planet
    GreenfootImage textImage = new GreenfootImage(String.valueOf(planetNumber), 24, new Color(0, 255, 128), new Color(0, 0, 0, 0));
    GreenfootImage image = new GreenfootImage(textImage.getWidth()+12, 36);GifImage planet= new GifImage("alienPlanet1.gif");
    Rocket s=getRocket();
-   
+   Aliens alien=new Aliens();
    
     
     //Actor alien = getOneObjectAtOffset(0,0, Aliens.class);  
@@ -38,21 +38,26 @@ public class AlienPlanet extends Planet
          image.setColor(new Color(0, 0, 196));
          image.fillRect(3, 3, image.getWidth()-6, 30);
          image.drawImage(textImage, xLoc, yLoc);
+         
      
     }
     public void act() 
-    {   GameWorld g=(GameWorld) getWorld();
+    {  
+         setImage(planet.getCurrentImage());
+        GameWorld g=(GameWorld) getWorld();
         if(g.getMaxFuel()<= 0)
         {
              Greenfoot.setWorld(new Over());
         }
         else if(g.checkAllCaptured()){
-            Greenfoot.stop();
+             World newWorld = new WinWorld();
+             Greenfoot.setWorld(newWorld);
+        
         }
         else
         {
             capture();
-            setImage(planet.getCurrentImage());
+            
             
          
         }
@@ -65,18 +70,20 @@ public class AlienPlanet extends Planet
          if(Greenfoot.mouseClicked(this))
          {   if(isClickable){
              if(isCaptured){
+              
              
-           
              g.selectedPlanetId=planetNumber;
              g.isSourceSelected=true;
-            
+             System.out.println("selected id:"+g.selectedPlanetId);
              
             
          }
              else if((!isCaptured)&&(g.isSourceSelected)&&(neighbourMatrix.containsKey(g.selectedPlanetId))){
-            
-           Greenfoot.playSound("explosion.wav"); 
-             isCaptured=true;
+            //GreenfootImage myImage = new GreenfootImage("BluePlanet.png");
+            //setImage(myImage);
+            Greenfoot.playSound("explosion.wav"); 
+            isCaptured=true;
+             g.removeObject(alien);
              g.addObject(s,xLoc,yLoc-40);
              g.updatePlanetCount();
              
@@ -103,7 +110,7 @@ public class AlienPlanet extends Planet
     
  public void alienGrow(){
     GameWorld g=(GameWorld) getWorld();
-    g.addObject(new Aliens(),xLoc, yLoc);
+    g.addObject(alien,xLoc, yLoc-40);
     }  
     
     
