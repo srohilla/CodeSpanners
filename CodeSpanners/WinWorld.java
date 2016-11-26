@@ -15,10 +15,12 @@ public class WinWorld extends World
      */
     public WinWorld()
     {    
+       
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-         super(800, 600, 1); 
-      addObject(new AllPlanetCaptured(),400, 300);
-  addObject(new Restart(), 400,400);
+        super(800, 600, 1); 
+         Greenfoot.playSound("GameWin.wav");
+        addObject(new AllPlanetCaptured(),400, 300);
+        addObject(new Restart(), 400,400);
          
     }
 }

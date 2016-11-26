@@ -19,7 +19,8 @@ public class GameWorld extends World
     boolean isSourceSelected=true;
     Message currentScore= new Message();
     SpaceShip spaceship=new SpaceShip();
-    
+    String playerName="Spartan";
+    private GreenfootSound bgSound = new GreenfootSound("background.wav");
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -61,7 +62,8 @@ public class GameWorld extends World
          universeMatrix.put(5,a5);
          universeMatrix.put(6,a6);
          universeMatrix.put(7,a7);
-         universeMatrix.put(8,a8);    
+         universeMatrix.put(8,a8); 
+        
          prepare();
        
     }
@@ -83,6 +85,7 @@ public class GameWorld extends World
      // addObject(r,240,160);
         //adding asteroid
      String inputValue = JOptionPane.showInputDialog("Please Enter Your Name Spartan !");   
+     bgSound.play();
      addObject(new Asteroids(),230,180);//between home and 1
      addObject(new Asteroids(),180,230);//between home and 1
      addObject(new Asteroids(),160,270);//between home and 1
@@ -114,7 +117,8 @@ public class GameWorld extends World
      addObject(a8,1200,650);
   
     // addObject(m,670,450);
-     Greenfoot.playSound("background.wav"); 
+    
+     //Greenfoot.playSound("background.wav"); 
 
      addObject(currentScore,300,20);
      currentScore.setText(String.valueOf(maxFuel));
@@ -155,5 +159,26 @@ public class GameWorld extends World
     
     public int getMaxFuel(){
     return maxFuel;
+    }
+    
+    void activateNeighbourAlien(int key){
+        if (key==0){
+        return;
+        }
+        AlienPlanet p=(AlienPlanet)universeMatrix.get(key);
+        if(!p.isCaptured){  
+         p.activateAlien();
+    }
+    } 
+     public void setPlayerName(String name){
+     this.playerName=name;
+    
+    }
+    public String getPlayerName(){
+    return this.playerName;
+    }
+    
+    public void stopBgSound(){
+        bgSound.stop();
     }
 }
