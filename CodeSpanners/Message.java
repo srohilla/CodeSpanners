@@ -16,7 +16,17 @@ public class Message extends Actor
     public Message(){ 
         img = new GreenfootImage(msg, 50, java.awt.Color.RED, java.awt.Color.GREEN); 
        
-        setImage(img);
+       setImage(img);
+        
+    }
+       
+    
+    public Message(String msg){ 
+        GreenfootImage image = new GreenfootImage(msg, 20, 
+                                    Color.WHITE,Color.BLACK);
+        image.setTransparency(170);                           
+        setImage(image);
+      
         
     }
     
@@ -34,7 +44,6 @@ public class Message extends Actor
         img.drawString(msg, 0, 40); 
     }
 
-    
     
     /**
      * Act - do whatever the Message wants to do. This method is called whenever

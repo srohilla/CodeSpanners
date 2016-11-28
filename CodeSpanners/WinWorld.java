@@ -20,7 +20,13 @@ public class WinWorld extends World
         super(800, 600, 1); 
          Greenfoot.playSound("GameWin.wav");
         addObject(new AllPlanetCaptured(),400, 300);
-        addObject(new Restart(), 400,400);
+       
          
+    }
+    public void act(){
+      if(Greenfoot.isKeyDown("enter")){
+            Greenfoot.setWorld(new RankingWorld());
+        }
+    
     }
 }
