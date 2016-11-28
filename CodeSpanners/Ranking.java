@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.HashMap;
+import java.io.IOException;
 /**
  * Write a description of class Ranking here.
  * 
@@ -21,6 +22,19 @@ public class Ranking extends Actor
         image.scale(800,600) ;
   
         
+    }
+    
+    public void getRanking(){
+        try{
+        Score score=new Score();
+        HashMap<String,String> map=score.getScores(); 
+        System.out.println("scoreMap: " + map);
+       // score.postScores();
+        
+    }
+    catch(IOException ex){
+    
+    }
     }
     
 }

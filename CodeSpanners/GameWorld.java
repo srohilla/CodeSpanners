@@ -84,7 +84,8 @@ public class GameWorld extends World
     {
      // addObject(r,240,160);
         //adding asteroid
-     String inputValue = JOptionPane.showInputDialog("Please Enter Your Name Spartan !");   
+     playerName = JOptionPane.showInputDialog("Please Enter Your Name Spartan !");   
+     Score.playerName=playerName;
      bgSound.play();
      addObject(new Asteroids(),230,180);//between home and 1
      addObject(new Asteroids(),180,230);//between home and 1

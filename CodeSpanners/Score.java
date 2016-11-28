@@ -19,7 +19,8 @@ import org.restlet.resource.ResourceException;
  * @version (a version number or a date)
  */
 public class Score extends Actor
-{
+{   public static String playerName;
+    public static int score;
     /**
      * Act - do whatever the Score wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -30,8 +31,8 @@ public class Score extends Actor
     } 
     
     @SuppressWarnings("unchecked")
-	private static <K> HashMap<String, String> getScores() throws IOException {
-		ClientResource clientResource = new ClientResource("hhttp://ec2-54-214-109-30.us-west-2.compute.amazonaws.com:8080/CodeSpannersRestlet/service/scores");
+	public static HashMap<String, String> getScores() throws IOException {
+		ClientResource clientResource = new ClientResource("http://ec2-54-214-109-30.us-west-2.compute.amazonaws.com:8080/CodeSpannersRestlet/service/scores");
 		Representation highscoresRep = clientResource.get(new MediaType("application/json"));
 		HashMap<String, String> scoreMap = new HashMap<String, String>();
 		try {
@@ -49,14 +50,15 @@ public class Score extends Actor
 	}
 
 	@SuppressWarnings("unchecked")
-	private static <K> void postScores(String name, String highscore) throws IOException {
+	public static void postScores() throws IOException {
 		HashMap<String, String> scoreMap = new HashMap<String, String>();
-		scoreMap.put(name, highscore);
+		String sc=String.valueOf(score);
+		scoreMap.put(playerName, sc);
 		JSONObject jsonObj = new JSONObject(scoreMap);
 		JsonRepresentation jsonRes = new JsonRepresentation(jsonObj);
 		System.out.println("scoreMap: " + scoreMap);
 		ClientResource clientResource = new ClientResource("http://ec2-54-214-109-30.us-west-2.compute.amazonaws.com:8080/CodeSpannersRestlet/service/scores");
-		Representation highscoresRep = clientResource.post(jsonRes, MediaType.APPLICATION_JSON);
+		Representation highscoresRep = clientResource.post(jsonRes, new MediaType("application/json"));
 		highscoresRep.write(System.out);
 	}
     
