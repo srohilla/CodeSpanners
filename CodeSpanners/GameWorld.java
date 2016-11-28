@@ -13,7 +13,7 @@ public class GameWorld extends World
     int noOfPlanetsCaptured=0;
     Planet home,a1,a2,a3,a4,a5,a6,a7,a8;
     HashMap<Integer,Planet> universeMatrix = new HashMap<Integer,Planet>();
-    int maxFuel=25;
+    int maxFuel=22;
     int selectedPlanetId=0;
     boolean isSourceSelected=true;
     Message currentScore= new Message();
@@ -117,7 +117,7 @@ public class GameWorld extends World
     // addObject(m,670,450);
      Greenfoot.playSound("background.wav"); 
 
-     addObject(currentScore,300,20);
+     addObject(currentScore,160,20);
      currentScore.setText(String.valueOf(maxFuel));
 
 
