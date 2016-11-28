@@ -127,4 +127,15 @@ public class AlienPlanet extends Planet
     public void isCaptured(){
     this.isCaptured=true;
     }
+     public void displayMessage(){
+       GameWorld g=(GameWorld) getWorld();
+        Message msg=new Message("Please select the source");
+        
+        g.addObject(msg,xLoc, yLoc);
+        
+        Greenfoot.delay(60);
+        
+        g.removeObject(msg);
+       
+    }
 }
