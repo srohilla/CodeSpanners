@@ -32,15 +32,16 @@ public class Message extends Actor
     
     public void setText(String msg){ 
        
-        int score =Integer.parseInt(msg)*10;
+         int score =Integer.parseInt(msg)*10;
         img = getImage();
         img.clear();
+        img.setTransparency(140);
         img.setColor( java.awt.Color.GREEN); 
         img.fillRect(0,0,score,100);
         img.setColor( java.awt.Color.RED);
         img.fillRect(score,0,100,100);
         img.setColor( java.awt.Color.WHITE);
-        img.setFont(new java.awt.Font("Default", java.awt.Font.PLAIN, 40));
+        img.setFont(new java.awt.Font("Default", java.awt.Font.ITALIC, 40));
         img.drawString(msg, 0, 40); 
     }
 
