@@ -39,6 +39,7 @@ public class HomePlanet extends Planet
     
     public void capture()
     { GameWorld g=(GameWorld) getWorld();
+         Set<Integer> keys=neighbourMatrix.keySet();
           
               if(Greenfoot.mouseClicked(this))
          {   
@@ -46,12 +47,15 @@ public class HomePlanet extends Planet
            
              g.selectedPlanetId=planetNumber;
              g.isSourceSelected=true;
-             System.out.println("selected id:"+g.selectedPlanetId);
-             
+             for(Integer k:keys){
+             g.activateNeighbourAlien(k);
+            } 
+            
+           
             
          }
             
-            Set<Integer> keys=neighbourMatrix.keySet();
+           
             for(Integer k:keys){
              g.activateNeighbour(k);
        

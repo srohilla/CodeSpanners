@@ -14,7 +14,7 @@ public class Rocket extends Actor
     public Rocket(int id)
     {   startPlanetId=id;
         GreenfootImage image = getImage() ;
-        image.scale(70,40) ;
+        image.scale(30,90) ;
     }
     public void act() 
     {

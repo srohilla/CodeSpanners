@@ -16,7 +16,7 @@ public class GameOver extends Actor
     
     public GameOver(){
         GreenfootImage image = getImage() ;
-        image.scale(800,700) ;
+        image.scale(800,600) ;
   
         
     }

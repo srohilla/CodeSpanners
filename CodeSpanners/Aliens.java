@@ -21,7 +21,16 @@ public class Aliens extends Actor implements DestroyableObjects
     {
         
     }
-    
+     public void react(){
+        
+        
+     setLocation(getX(), getY()+10);
+      Greenfoot.delay(10);
+     setLocation(getX(),getY()-10);
+ 
+      
+        
+    }
     public Aliens(){
         GreenfootImage image = getImage() ;
         image.scale(70,60) ;

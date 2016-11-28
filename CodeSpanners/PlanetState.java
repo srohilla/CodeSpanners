@@ -4,10 +4,10 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
+import java.util.*;
+
 public interface PlanetState  
 {
-    public void appear();
-    
-    public void disappear();
+   public void capture(GameWorld g);
     
 }
