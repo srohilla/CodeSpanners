@@ -1,8 +1,7 @@
 import greenfoot.*;
 import java.util.*;
 import java.awt.Color;
-import java.util.HashMap;
-import java.io.IOException;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class AlienPlanet here.
@@ -74,14 +73,7 @@ public class AlienPlanet extends Planet
         else if(g.checkAllCaptured()){
             g.stopBgSound();
              Score.score=g.getMaxFuel();
-        try{
-        Score score=new Score();
-        score.postScores();
-        
-    }
-    catch(IOException ex){
-    
-    }
+     
              World newWorld = new WinWorld();
              Greenfoot.setWorld(newWorld);
         

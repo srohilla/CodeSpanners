@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.io.IOException;
 /**
  * Write a description of class AllPlanetCaptured here.
  * 
@@ -20,5 +20,16 @@ public class AllPlanetCaptured extends Actor
     public AllPlanetCaptured(){
     GreenfootImage image = getImage();
         image.scale(800,600) ;
+    }
+    
+    public void postRanking(){
+       try{
+        Score score=new Score();
+        score.postScores();
+        
+    }
+    catch(IOException ex){
+    
+    }
     }
 }
