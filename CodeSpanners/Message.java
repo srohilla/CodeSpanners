@@ -16,25 +16,35 @@ public class Message extends Actor
     public Message(){ 
         img = new GreenfootImage(msg, 50, java.awt.Color.RED, java.awt.Color.GREEN); 
        
-        setImage(img);
+       setImage(img);
+        
+    }
+       
+    
+    public Message(String msg){ 
+        GreenfootImage image = new GreenfootImage(msg, 20, 
+                                    Color.WHITE,Color.BLACK);
+        image.setTransparency(170);                           
+        setImage(image);
+      
         
     }
     
     public void setText(String msg){ 
        
-        int score =Integer.parseInt(msg)*10;
+         int score =Integer.parseInt(msg)*10;
         img = getImage();
         img.clear();
+        img.setTransparency(140);
         img.setColor( java.awt.Color.GREEN); 
         img.fillRect(0,0,score,100);
         img.setColor( java.awt.Color.RED);
         img.fillRect(score,0,100,100);
         img.setColor( java.awt.Color.WHITE);
-        img.setFont(new java.awt.Font("Default", java.awt.Font.PLAIN, 40));
+        img.setFont(new java.awt.Font("Default", java.awt.Font.ITALIC, 40));
         img.drawString(msg, 0, 40); 
     }
 
-    
     
     /**
      * Act - do whatever the Message wants to do. This method is called whenever

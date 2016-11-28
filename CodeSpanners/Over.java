@@ -15,6 +15,9 @@ public class Over extends World
         super(800, 600, 1);  
         Greenfoot.playSound("GameLose.wav");
         addObject(new GameOver(),400, 300);
-        addObject(new Restart(), 400,400);
+         if(Greenfoot.isKeyDown("enter")){
+            Greenfoot.setWorld(new MenuWorld());
+        }
+      //  addObject(new Restart(), 400,400);
     }
 }

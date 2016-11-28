@@ -19,7 +19,8 @@ public class OriginalState implements PlanetState
     }
     
      public void capture(GameWorld g){
-         if((g.isSourceSelected)&&(planet.neighbourMatrix.containsKey(g.selectedPlanetId))){
+         if(g.isSourceSelected){
+         if((planet.neighbourMatrix.containsKey(g.selectedPlanetId))){
            
            Greenfoot.playSound("explosion.wav"); 
           //  isCaptured=true;
@@ -41,9 +42,14 @@ public class OriginalState implements PlanetState
             planet.setState(planet.getCapturedState());
              
         }
-      
         
     }
+    else{
+        System.out.println("Source not selected");
+        planet.displayMessage();
+        
+        
+}
 
     
-}
+}}

@@ -120,7 +120,8 @@ public class GameWorld extends World
     
      //Greenfoot.playSound("background.wav"); 
 
-     addObject(currentScore,300,20);
+     showText("Fuel", 20, 20);
+     addObject(currentScore,150,20);
      currentScore.setText(String.valueOf(maxFuel));
 
 
