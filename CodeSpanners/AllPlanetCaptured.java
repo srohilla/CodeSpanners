@@ -18,7 +18,7 @@ public class AllPlanetCaptured extends Actor
   // Add your action code here.
     } 
     public AllPlanetCaptured(){
-    GreenfootImage image = getImage() ;
+    GreenfootImage image = getImage();
         image.scale(800,600) ;
     }
 }
