@@ -11,10 +11,18 @@ import java.awt.Color;  // (World, Actor, GreenfootImage, Greenfoot and MouseInf
 public class AlienPlanet extends Planet 
 {
    GreenfootImage textImage = new GreenfootImage(String.valueOf(planetNumber), 24, new Color(0, 255, 128), new Color(0, 0, 0, 0));
-   GreenfootImage image = new GreenfootImage(textImage.getWidth()+12, 36);GifImage planet= new GifImage("alienPlanet1.gif");
+   GreenfootImage image = new GreenfootImage(textImage.getWidth()+12, 36);
+   PlanetState state;
+  
    Rocket s=getRocket();
-   
-   
+   Aliens alien=new Aliens();
+    GifImage planet= new GifImage("nplanet.gif");
+     GifImage nplanet= new GifImage("nplanet.gif");
+     GifImage cplanet= new GifImage("planet.gif");
+     
+
+     PlanetState originalState;
+     PlanetState capturedState;
     
     //Actor alien = getOneObjectAtOffset(0,0, Aliens.class);  
     /**
@@ -33,26 +41,44 @@ public class AlienPlanet extends Planet
         this.yLoc=yLoc;
         this.planetNumber=planetNumber;
         this.neighbourMatrix=adjMatrix;
+        this.originalState=new OriginalState(this);
+        this.capturedState=new CapturedState(this);
          image.setColor(new Color(196, 196, 0));
          image.fill();
          image.setColor(new Color(0, 0, 196));
          image.fillRect(3, 3, image.getWidth()-6, 30);
          image.drawImage(textImage, xLoc, yLoc);
+        this.state= originalState;
      
     }
     public void act() 
-    {   GameWorld g=(GameWorld) getWorld();
+    {     setImage(planet.getCurrentImage());
+         
+           if(isCaptured)
+          {
+              setImage(cplanet.getCurrentImage());
+          }
+          else
+          {
+            setImage(planet.getCurrentImage());
+          }
+          
+          
+        GameWorld g=(GameWorld) getWorld();
         if(g.getMaxFuel()<= 0)
-        {
+        {g.stopBgSound();
              Greenfoot.setWorld(new Over());
         }
         else if(g.checkAllCaptured()){
-            Greenfoot.stop();
+            g.stopBgSound();
+             World newWorld = new WinWorld();
+             Greenfoot.setWorld(newWorld);
+        
         }
         else
         {
             capture();
-            setImage(planet.getCurrentImage());
+            
             
          
         }
@@ -61,35 +87,9 @@ public class AlienPlanet extends Planet
     public void capture()
     {     
       GameWorld g=(GameWorld) getWorld();
-         
          if(Greenfoot.mouseClicked(this))
          {   if(isClickable){
-             if(isCaptured){
-             
-           
-             g.selectedPlanetId=planetNumber;
-             g.isSourceSelected=true;
-             System.out.println("selected id:"+g.selectedPlanetId);
-             
-            
-         }
-             else if((!isCaptured)&&(g.isSourceSelected)&&(neighbourMatrix.containsKey(g.selectedPlanetId))){
-            
-           
-             isCaptured=true;
-             g.addObject(s,xLoc,yLoc-40);
-             g.updatePlanetCount();
-             
-             int wieght=neighbourMatrix.get(g.selectedPlanetId);
-             g.updateScore(wieght);
-             g.isSourceSelected=false;
-            Set<Integer> keys=neighbourMatrix.keySet();
-            for(Integer k:keys){
-             g.activateNeighbour(k);
-            
-            }
-            }
-            
+             state.capture(g); 
          }
         }
         
@@ -101,11 +101,30 @@ public class AlienPlanet extends Planet
    
     } 
     
- public void alienGrow(){
+ public void alienGrow()
+ {
     GameWorld g=(GameWorld) getWorld();
-    g.addObject(new Aliens(),xLoc, yLoc);
-    }  
-    
-    
+    g.addObject(alien,xLoc, yLoc-40);
    
+ }  
+   
+ public void activateAlien(){
+    alien.react();
+    } 
+  public PlanetState getState(){
+      return state;
+    }  
+   public void setState(PlanetState state){
+    this.state=state;
+    }
+    public PlanetState getOriginalState(){
+      return originalState;
+    } 
+    public PlanetState getCapturedState(){
+      return capturedState;
+    } 
+    
+    public void isCaptured(){
+    this.isCaptured=true;
+    }
 }

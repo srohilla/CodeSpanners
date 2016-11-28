@@ -1,11 +1,8 @@
 #BlueJ class context
 comment0.target=OriginalState
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ OriginalState\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=OriginalState()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ OriginalState\r\n
-comment2.params=
-comment2.target=void\ appear()
-comment3.params=
-comment3.target=void\ disappear()
-numComments=4
+comment1.params=planet
+comment1.target=OriginalState(AlienPlanet)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ OriginalState\n
+comment2.params=g
+comment2.target=void\ capture(GameWorld)
+numComments=3

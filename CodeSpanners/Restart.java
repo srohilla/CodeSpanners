@@ -26,7 +26,7 @@ public class Restart extends Actor
     Font f = new Font("Arial", 1, 30);
     this.text.setFont(f);
     this.text.setColor(Color.white);
-    this.text.drawString("Press enter to restart", 50, 50);
+  //  this.text.drawString("Press enter to restart", 50, 50);
     setImage(this.text);
   }  
 }
