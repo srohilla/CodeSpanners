@@ -18,7 +18,7 @@ public class HelpGameWorld extends World
     public HelpGameWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1600, 780, 1);
+        super(1600, 900, 1);
         bb = new BackButton("Back");
         bc = new BackCommand();
         addObject(bb,100,300);
