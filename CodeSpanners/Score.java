@@ -53,10 +53,11 @@ public class Score extends Actor
 	public static void postScores() throws IOException {
 		HashMap<String, String> scoreMap = new HashMap<String, String>();
 		String sc=String.valueOf(score);
+		playerName=playerName.toUpperCase();
 		scoreMap.put(playerName,sc);
 		JSONObject jsonObj = new JSONObject(scoreMap);
 		JsonRepresentation jsonRes = new JsonRepresentation(jsonObj);
-		System.out.println("scoreMap: " + scoreMap);
+		//System.out.println("scoreMap: " + scoreMap);
 		ClientResource clientResource = new ClientResource("http://ec2-54-214-109-30.us-west-2.compute.amazonaws.com:8080/CodeSpannersRestlet/service/scores");
 		Representation highscoresRep = clientResource.post(jsonRes, new MediaType("application/json"));
 		//highscoresRep.write(System.out);

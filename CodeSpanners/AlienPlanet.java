@@ -18,7 +18,6 @@ public class AlienPlanet extends Planet
    Rocket s=getRocket();
    Aliens alien=new Aliens();
     GifImage planet= new GifImage("nplanet.gif");
-     GifImage nplanet= new GifImage("nplanet.gif");
      GifImage cplanet= new GifImage("planet.gif");
      
 
@@ -132,7 +131,7 @@ public class AlienPlanet extends Planet
     }
      public void displayMessage(){
        GameWorld g=(GameWorld) getWorld();
-        Message msg=new Message("Please select the source");
+        Message msg=new Message("Please select the source",170,20);
         
         g.addObject(msg,xLoc, yLoc);
         

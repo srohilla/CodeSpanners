@@ -24,8 +24,8 @@ public class AllPlanetCaptured extends Actor
     
     public void postRanking(){
        try{
-        Score score=new Score();
-        score.postScores();
+      
+        Score.postScores();
         
     }
     catch(IOException ex){

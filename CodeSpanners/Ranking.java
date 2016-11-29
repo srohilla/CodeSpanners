@@ -19,7 +19,7 @@ import java.util.*;
  * @version (a version number or a date)
  */
 public class Ranking extends Actor
-{
+{  
     /**
      * Act - do whatever the Ranking wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -31,17 +31,49 @@ public class Ranking extends Actor
         public Ranking(){
         GreenfootImage image = getImage() ;
         image.scale(800,600) ;
-  
+    
         
     }
     
     public void getRanking(){
         try{
-        Score score=new Score();
-        HashMap<String,String> map=score.getScores(); 
-        System.out.println("scoreMap: " + map);
+        
+        
+        String[] sb =  new String[3];
+        HashMap<String,String> map=Score.getScores(); 
+      //  System.out.println("scoreMap: " + map);
         HashMap<String,String> resultmap=sortByValues(map);
         System.out.println("SortedscoreMap: " + resultmap);
+         Iterator it = resultmap.entrySet().iterator();
+         int count=0;
+         int rank=0;
+         while (it.hasNext()) {
+        
+          Map.Entry pair = (Map.Entry)it.next();
+          if(count<3){
+          sb[count]=String.valueOf(pair.getKey());
+        }
+          if(Score.playerName.equals(pair.getKey())){
+            rank=count+1;
+            }
+        //  System.out.println(pair.getKey() + "--> " + pair.getValue());
+          it.remove(); 
+    
+          count++;
+        }
+   
+      
+    
+   RankingWorld g=(RankingWorld) getWorld();
+        Message msg=new Message(sb[0],170,25);   
+        g.addObject(msg,110, 215);
+         Message msg1=new Message(sb[1],170,25);   
+        g.addObject(msg1,130, 255);
+          Message msg2=new Message(sb[2],170,25);   
+        g.addObject(msg2,135, 300);
+        
+        Message msg3=new Message("Your ranking is ---> "+rank,170,40);   
+        g.addObject(msg3,250, 400);
        
        
     }
@@ -59,9 +91,8 @@ public class Ranking extends Actor
                   .compareTo(((Entry) (o2)).getValue());
             }
        };
-       //to reverse the order from ascending to descending
-       Collections.reverseOrder(cmp);
-       Collections.sort(list,cmp);
+     
+       Collections.sort(list,Collections.reverseOrder(cmp));
 
        // Here I am copying the sorted list in HashMap
        // using LinkedHashMap to preserve the insertion order
@@ -72,6 +103,6 @@ public class Ranking extends Actor
        } 
        return sortedHashMap;
   }
- 
+
     
 }

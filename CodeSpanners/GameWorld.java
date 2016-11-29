@@ -19,7 +19,7 @@ public class GameWorld extends World
     boolean isSourceSelected=true;
     Message currentScore= new Message();
     SpaceShip spaceship=new SpaceShip();
-    String playerName="Spartan";
+    String playerName;
     private GreenfootSound bgSound = new GreenfootSound("background.wav");
     /**
      * Constructor for objects of class MyWorld.
@@ -84,8 +84,13 @@ public class GameWorld extends World
     {
      // addObject(r,240,160);
         //adding asteroid
-     playerName = JOptionPane.showInputDialog("Please Enter Your Name Spartan !");   
-     Score.playerName=playerName;
+        
+     playerName = JOptionPane.showInputDialog("Please Enter Your Name Spartan !"); 
+    
+     if("".equals(playerName)){
+     Score.playerName="SPARTAN";}
+     else{
+     Score.playerName=playerName;}
      bgSound.play();
      addObject(new Asteroids(),230,180);//between home and 1
      addObject(new Asteroids(),180,230);//between home and 1

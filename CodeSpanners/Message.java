@@ -21,14 +21,15 @@ public class Message extends Actor
     }
        
     
-    public Message(String msg){ 
-        GreenfootImage image = new GreenfootImage(msg, 20, 
+    public Message(String msg,int transparency,int size){ 
+        GreenfootImage image = new GreenfootImage(msg, size, 
                                     Color.WHITE,Color.BLACK);
-        image.setTransparency(170);                           
+        image.setTransparency(transparency);                           
         setImage(image);
       
         
     }
+   
     
     public void setText(String msg){ 
        
