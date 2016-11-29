@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class GameWorld extends World
+public class GameWorld extends World implements Subject
 {   //int time;
     boolean allCaptured=false;
     int score=0;
@@ -19,12 +19,15 @@ public class GameWorld extends World
     boolean isSourceSelected=true;
     Message currentScore= new Message();
     SpaceShip spaceship=new SpaceShip();
-    String playerName;
+    String playerName="Spartan";
+    String newscore="";
     private GreenfootSound bgSound = new GreenfootSound("background.wav");
+    private ArrayList<Observer> observers = new ArrayList<Observer>() ;
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
+    
     public GameWorld()
     {    
         super(1500, 750, 1);
@@ -84,13 +87,8 @@ public class GameWorld extends World
     {
      // addObject(r,240,160);
         //adding asteroid
-        
-     playerName = JOptionPane.showInputDialog("Please Enter Your Name Spartan !"); 
-    
-     if("".equals(playerName)){
-     Score.playerName="SPARTAN";}
-     else{
-     Score.playerName=playerName;}
+     playerName = JOptionPane.showInputDialog("Please Enter Your Name Spartan !");   
+     Score.playerName=playerName;
      bgSound.play();
      addObject(new Asteroids(),230,180);//between home and 1
      addObject(new Asteroids(),180,230);//between home and 1
@@ -129,8 +127,7 @@ public class GameWorld extends World
      showText("Fuel", 20, 20);
      addObject(currentScore,150,20);
      currentScore.setText(String.valueOf(maxFuel));
-
-
+     observers.add(currentScore);
     }
     void submitScores(){
     //to do
@@ -151,11 +148,28 @@ public class GameWorld extends World
     public void updatePlanetCount(){
         noOfPlanetsCaptured++;
     }
+    public  void attach(Observer obj){
+        observers.add(obj) ;
+    }
+    
+    public  void detach(Observer obj){
+        observers.remove(obj) ;
+    }
+    public  void notifyObservers(){
+        for (Observer obj  : observers)
+        {
+            obj.update();
+        }
+    }
+ public String getState() {
+		return newscore ;
+	}
   public void updateScore(int wieght){  
       score=score+wieght;
       maxFuel=maxFuel-wieght;
-      String newscore=String.valueOf(maxFuel);
-      currentScore.setText(""+newscore);
+      newscore=String.valueOf(maxFuel);
+      notifyObservers();
+      //currentScore.setText(""+newscore);
     }
   public boolean checkAllCaptured(){
       if(noOfPlanetsCaptured==8){

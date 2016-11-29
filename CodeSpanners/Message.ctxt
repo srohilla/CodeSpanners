@@ -1,13 +1,15 @@
 #BlueJ class context
 comment0.target=Message
-comment0.text=\n\ The\ meesage\ class\ is\ designed\ to\ be\ used\ as\ a\ framework\ to\ display\ various\ text\ messages\n\ \n\ @author\ (Shruti)\ \n\ @version\ (9/17/2016)\n
+comment0.text=\r\n\ The\ meesage\ class\ is\ designed\ to\ be\ used\ as\ a\ framework\ to\ display\ various\ text\ messages\r\n\ \r\n\ @author\ (Shruti)\ \r\n\ @version\ (9/17/2016)\r\n
 comment1.params=
 comment1.target=Message()
 comment2.params=msg\ transparency\ size
 comment2.target=Message(java.lang.String,\ int,\ int)
-comment3.params=msg
-comment3.target=void\ setText(java.lang.String)
-comment4.params=
-comment4.target=void\ act()
-comment4.text=\n\ Act\ -\ do\ whatever\ the\ Message\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-numComments=5
+comment3.params=
+comment3.target=void\ update()
+comment4.params=msg
+comment4.target=void\ setText(java.lang.String)
+comment5.params=
+comment5.target=void\ act()
+comment5.text=\r\n\ Act\ -\ do\ whatever\ the\ Message\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=6
