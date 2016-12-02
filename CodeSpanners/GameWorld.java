@@ -33,31 +33,32 @@ public class GameWorld extends World implements Subject
     {    
         super(1500, 750, 1);
       
-         HashMap<Integer,Integer> planetmap = buildMatrix(new int[]{1,2},new int[]{2,4});
-          home=new HomePlanet(0,planetmap,340,120);
+                HashMap<Integer,Integer> planetmap = buildMatrix(new int[]{1,2},new int[]{2,4});
+          home=new HomePlanet(0,planetmap,120,400);
          planetmap = buildMatrix(new int[]{0,2,3,5},new int[]{2,3,4,1});
           a1=new AlienPlanet(1,planetmap,340,120);
        
          planetmap=buildMatrix(new int[]{0,1,3,4},new int[]{4,3,5,3});
-          a2=new AlienPlanet(2,planetmap,300,560);
+          a2=new AlienPlanet(2,planetmap,340,600);
         
          planetmap = buildMatrix(new int[]{1,2,5,4},new int[]{4,5,2,2});
           a3=new AlienPlanet(3,planetmap,580,300);
          
          planetmap = buildMatrix(new int[]{2,3,5,6,8},new int[]{3,2,2,3,7});
-          a4=new AlienPlanet(4,planetmap,660,620);
+          a4=new AlienPlanet(4,planetmap,800,620);
          
          planetmap = buildMatrix(new int[]{1,3,4,7},new int[]{1,2,2,7});
-          a5=new AlienPlanet(5,planetmap,750,150);
+          a5=new AlienPlanet(5,planetmap,800,120);
          
          planetmap = buildMatrix(new int[]{4,7,8},new int[]{3,2,3});
-          a6=new AlienPlanet(6,planetmap,900,390);
+          a6=new AlienPlanet(6,planetmap,1100,360);
          
          planetmap = buildMatrix(new int[]{5,6,8},new int[]{7,2,4});
-          a7=new AlienPlanet(7,planetmap,1100,170);
+          a7=new AlienPlanet(7,planetmap,1300,150);
           
          planetmap = buildMatrix(new int[]{7,6,4},new int[]{4,3,7});
-          a8=new AlienPlanet(8,planetmap,1200,650);
+          a8=new AlienPlanet(8,planetmap,1300,620);
+
            
          universeMatrix.put(1,a1);
          universeMatrix.put(2,a2);
@@ -228,8 +229,7 @@ public class GameWorld extends World implements Subject
      addObject(meteorite,780,520);//between 6 and 4
      comets =  af.getType("Comet");
      addObject(comets,700,580);//between 6 and 4
-     
-     
+    
      
      
      
@@ -238,13 +238,14 @@ public class GameWorld extends World implements Subject
      addObject(spaceship,120,350);        
       
      addObject(a1,340,120);
-     addObject(a2,300,560);
+     addObject(a2,340,600);
      addObject(a3,580,300);
-     addObject(a4,660,620);
-     addObject(a5,750,150);
-     addObject(a6,900,390);
-     addObject(a7,1100,170);
-     addObject(a8,1200,650);
+     addObject(a4, 800,620);
+     addObject(a5,800,120);
+     addObject(a6,1100,360);
+     addObject(a7,1300,150);
+     addObject(a8,1300,620);
+
   
     // addObject(m,670,450);
     
