@@ -1,8 +1,7 @@
 import greenfoot.*;
 import java.util.*;
 import java.awt.Color;
-import java.util.HashMap;
-import java.io.IOException;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class AlienPlanet here.
@@ -19,7 +18,6 @@ public class AlienPlanet extends Planet
    Rocket s=getRocket();
    Aliens alien=new Aliens();
     GifImage planet= new GifImage("nplanet.gif");
-     GifImage nplanet= new GifImage("nplanet.gif");
      GifImage cplanet= new GifImage("planet.gif");
      
 
@@ -74,14 +72,7 @@ public class AlienPlanet extends Planet
         else if(g.checkAllCaptured()){
             g.stopBgSound();
              Score.score=g.getMaxFuel();
-        try{
-        Score score=new Score();
-        score.postScores();
-        
-    }
-    catch(IOException ex){
-    
-    }
+     
              World newWorld = new WinWorld();
              Greenfoot.setWorld(newWorld);
         
@@ -140,7 +131,7 @@ public class AlienPlanet extends Planet
     }
      public void displayMessage(){
        GameWorld g=(GameWorld) getWorld();
-        Message msg=new Message("Please select the source");
+        Message msg=new Message("Please select the source",170,20);
         
         g.addObject(msg,xLoc, yLoc);
         

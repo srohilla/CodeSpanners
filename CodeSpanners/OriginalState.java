@@ -45,7 +45,7 @@ public class OriginalState implements PlanetState
         
     }
     else{
-        System.out.println("Source not selected");
+       
         planet.displayMessage();
         
         

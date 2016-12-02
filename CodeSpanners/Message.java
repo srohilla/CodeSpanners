@@ -7,29 +7,36 @@ import java.awt.Color;
  * @author (Shruti) 
  * @version (9/17/2016)
  */
-public class Message extends Actor
+public class Message extends Actor implements Observer
 {
     GreenfootImage img;
     int planetId;
     String msg = "Planet ID :"+String.valueOf(planetId);
-    
+    protected String observerState;
+    protected GameWorld subject;
     public Message(){ 
         img = new GreenfootImage(msg, 50, java.awt.Color.RED, java.awt.Color.GREEN); 
        
        setImage(img);
+       
         
     }
        
     
-    public Message(String msg){ 
-        GreenfootImage image = new GreenfootImage(msg, 20, 
+    public Message(String msg,int transparency,int size){ 
+        GreenfootImage image = new GreenfootImage(msg, size, 
                                     Color.WHITE,Color.BLACK);
-        image.setTransparency(170);                           
+        image.setTransparency(transparency);                           
         setImage(image);
-      
+        
         
     }
-    
+   
+    public void update(){
+        subject=(GameWorld) getWorld();
+        observerState=subject.getState();
+        setText(observerState);
+        }
     public void setText(String msg){ 
        
          int score =Integer.parseInt(msg)*10;

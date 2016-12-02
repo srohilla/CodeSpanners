@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class GameWorld extends World
+public class GameWorld extends World implements Subject
 {   //int time;
     boolean allCaptured=false;
     int score=0;
@@ -20,11 +20,15 @@ public class GameWorld extends World
     Message currentScore= new Message();
     SpaceShip spaceship=new SpaceShip();
     String playerName="Spartan";
+    String newscore="";
     private GreenfootSound bgSound = new GreenfootSound("background.wav");
+    private ArrayList<Observer> observers = new ArrayList<Observer>() ;
+    AsteroidFactory af = new AsteroidFactory();
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
+    
     public GameWorld()
     {    
         super(1500, 750, 1);
@@ -87,24 +91,149 @@ public class GameWorld extends World
      playerName = JOptionPane.showInputDialog("Please Enter Your Name Spartan !");   
      Score.playerName=playerName;
      bgSound.play();
-     addObject(new Asteroids(),230,180);//between home and 1
-     addObject(new Asteroids(),180,230);//between home and 1
-     addObject(new Asteroids(),160,270);//between home and 1
+     //Creating object of the factory class 
+     Asteroids meteorite ;
+     Asteroids comets;
+     meteorite = (Meteorite) af.getType("Meteorite");
+     comets =  (Comets)af.getType("Comet");
+     //meteorite.draw();
+     //comets.draw();
+     addObject(meteorite,230,180);//between home and 1
+     addObject(comets,160,270);//between home and 1
+
+     meteorite=af.getType("Meteorite");
+     //meteorite.draw();
+     addObject(meteorite,430,160);
      
-     addObject(new Asteroids(),430,180);
-     addObject(new Asteroids(),420,190);
-     addObject(new Asteroids(),440,200);
-     addObject(new Asteroids(),450,210);
-     addObject(new Asteroids(),550,130); ////between 5 and 1
-     addObject(new Asteroids(),200,500);//between h and 2
-     addObject(new Asteroids(),180,510);//between h and 2
-     addObject(new Asteroids(),220,480);//between h and 2
-     addObject(new Asteroids(),160,490); //between h and 2
-     addObject(new Asteroids(),500,570); //between 2 and 4
-     addObject(new Asteroids(),510,590); //between 2 and 4
-     addObject(new Asteroids(),490,600); //between 2 and 4
+     meteorite=af.getType("Meteorite");
+     //meteorite.draw();
+     addObject(meteorite,420,180);
      
-  
+     meteorite=af.getType("Meteorite");
+     //meteorite.draw();
+     addObject(meteorite,440,200);
+     
+     meteorite=af.getType("Meteorite");
+     //meteorite.draw();
+     addObject(meteorite,470,230);
+     
+     comets =  af.getType("Comet");
+     //comets.draw();
+     addObject(comets,550,130); ////between 5 and 1
+     
+     comets =  af.getType("Comet");
+     addObject(comets,200,500);//between h and 2
+     meteorite=af.getType("Meteorite");
+     addObject(meteorite,180,510);//between h and 2
+     comets =  af.getType("Comet");
+     addObject(comets,220,480);//between h and 2
+     meteorite=af.getType("Meteorite");
+     addObject(meteorite,160,490); //between h and 2
+     
+     meteorite=af.getType("Meteorite");
+     addObject(meteorite,500,590); //between 2 and 4
+     comets =  af.getType("Comet");
+     addObject(comets,420,570); //between 2 and 4
+     meteorite=af.getType("Meteorite");
+     addObject(meteorite,570,600); //between 2 and 4
+    
+     meteorite=af.getType("Meteorite");
+     addObject(meteorite,340,240); //between 2 and 1
+     comets =  af.getType("Comet");
+     addObject(comets,320,400); //between 2 and 1
+     meteorite=af.getType("Meteorite");
+     addObject(meteorite,300,350); //between 2 and 1
+     
+     comets =  af.getType("Comet");
+     addObject(comets,380,520);//between 2 and 3
+     meteorite=af.getType("Meteorite");
+     addObject(meteorite,400,500);//between 3 and 2
+     comets =  af.getType("Comet");
+     addObject(comets,440,440);//between 3 and 2
+     meteorite=af.getType("Meteorite");
+     addObject(meteorite,470,370); //between 3 and 2
+     comets =  af.getType("Comet");
+     addObject(comets,520,340);//between 3 and 2
+     
+     comets =  af.getType("Comet");
+     addObject(comets,610,400); ////between 3 and 4
+     comets =  af.getType("Comet");
+     addObject(comets,620,500); ////between 3 and 4 
+     
+     comets =  af.getType("Comet");
+     addObject(comets,670,190); ////between 3 and 5
+     comets =  af.getType("Comet");
+     addObject(comets,630,230); ////between 3 and 5 
+     
+     comets =  af.getType("Comet");
+     addObject(comets,725,300); ////between 5 and 4
+     comets =  af.getType("Comet");
+     addObject(comets,700,490); ////between 5 and 4 
+     
+      
+     comets =  af.getType("Comet");
+     addObject(comets,930,130); ////between 5 and 7
+     comets =  af.getType("Comet");
+     addObject(comets,820,130); ////between 5 and 7
+     comets =  af.getType("Comet");
+     addObject(comets,850,130); ////between 5 and 7
+     meteorite=af.getType("Meteorite");
+     addObject(meteorite,870,135);//between 5 and 7
+     meteorite=af.getType("Meteorite");
+     addObject(meteorite,900,130);//between 5 and 7
+     comets =  af.getType("Comet");
+     addObject(comets,950,137); ////between 5 and 7
+     comets =  af.getType("Comet");
+     addObject(comets,1000,138);// between 5 and 7
+    
+     comets =  af.getType("Comet");
+     addObject(comets,960,630); ////between 4 and 8
+     comets =  af.getType("Comet");
+     addObject(comets,800,630); ////between 4 and 8
+     comets =  af.getType("Comet");
+     addObject(comets,850,630); ////between 4 and 8
+     meteorite=af.getType("Meteorite");
+     addObject(meteorite,900,635);//between 4 and 8
+     meteorite=af.getType("Meteorite");
+     addObject(meteorite,740,630);//between 4 and 8
+     comets =  af.getType("Comet");
+     addObject(comets,1100,637); ////between 4 and 8
+     comets =  af.getType("Comet");
+     addObject(comets,1000,638);// between 4 and 8
+     
+     meteorite=af.getType("Meteorite");
+     addObject(meteorite,1000,230); //between 6 and 7
+     meteorite=af.getType("Meteorite");
+     addObject(meteorite,950,280); //between 6 and 7
+     
+     comets =  af.getType("Comet");
+     addObject(comets,1150,450); ////between 7 and 8
+     comets =  af.getType("Comet");
+     addObject(comets,1150,250); ////between 7 and 8
+     comets =  af.getType("Comet");
+     addObject(comets,1150,350); ////between 7 and 8
+     comets =  af.getType("Comet");
+     addObject(comets,1180,550); ////between 7 and 8
+     
+     comets =  af.getType("Comet");
+     addObject(comets,980,440);//between 6 and 8
+     meteorite=af.getType("Meteorite");
+     addObject(meteorite,1070,520);//between 6 and 8
+     comets =  af.getType("Comet");
+     addObject(comets,1140,580);//between 6 and 8
+     
+     comets =  af.getType("Comet");
+     addObject(comets,850,440);//between 6 and 4
+     meteorite=af.getType("Meteorite");
+     addObject(meteorite,780,520);//between 6 and 4
+     comets =  af.getType("Comet");
+     addObject(comets,700,580);//between 6 and 4
+     
+     
+     
+     
+     
+     
      addObject(home,120,400);
      addObject(spaceship,120,350);        
       
@@ -124,8 +253,7 @@ public class GameWorld extends World
      showText("Fuel", 20, 20);
      addObject(currentScore,150,20);
      currentScore.setText(String.valueOf(maxFuel));
-
-
+     observers.add(currentScore);
     }
     void submitScores(){
     //to do
@@ -146,11 +274,28 @@ public class GameWorld extends World
     public void updatePlanetCount(){
         noOfPlanetsCaptured++;
     }
+    public  void attach(Observer obj){
+        observers.add(obj) ;
+    }
+    
+    public  void detach(Observer obj){
+        observers.remove(obj) ;
+    }
+    public  void notifyObservers(){
+        for (Observer obj  : observers)
+        {
+            obj.update();
+        }
+    }
+ public String getState() {
+		return newscore ;
+	}
   public void updateScore(int wieght){  
       score=score+wieght;
       maxFuel=maxFuel-wieght;
-      String newscore=String.valueOf(maxFuel);
-      currentScore.setText(""+newscore);
+      newscore=String.valueOf(maxFuel);
+      notifyObservers();
+      //currentScore.setText(""+newscore);
     }
   public boolean checkAllCaptured(){
       if(noOfPlanetsCaptured==8){

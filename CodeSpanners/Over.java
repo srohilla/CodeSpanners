@@ -13,11 +13,17 @@ public class Over extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1);  
-        Greenfoot.playSound("GameLose.wav");
+       // Greenfoot.playSound("GameLose.wav");
         addObject(new GameOver(),400, 300);
-         if(Greenfoot.isKeyDown("enter")){
+         
+      //  addObject(new Restart(), 400,400);
+    }
+        public void act(){
+        
+     
+      if(Greenfoot.isKeyDown("enter")){
             Greenfoot.setWorld(new MenuWorld());
         }
-      //  addObject(new Restart(), 400,400);
+    
     }
 }

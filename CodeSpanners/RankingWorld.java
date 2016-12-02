@@ -22,7 +22,14 @@ public class RankingWorld extends World
         rank.getRanking();
         
     }
+        public void act(){
+        
+     
+      if(Greenfoot.isKeyDown("enter")){
+            Greenfoot.setWorld(new MenuWorld());
+        }
     
+    }
     
    
 }
