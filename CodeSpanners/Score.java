@@ -58,7 +58,9 @@ public class Score extends Actor
 		JSONObject jsonObj = new JSONObject(scoreMap);
 		JsonRepresentation jsonRes = new JsonRepresentation(jsonObj);
 		//System.out.println("scoreMap: " + scoreMap);
-		ClientResource clientResource = new ClientResource("http://ec2-54-214-109-30.us-west-2.compute.amazonaws.com:8080/CodeSpannersRestlet/service/scores");
+		//ClientResource clientResource = new ClientResource("http://ec2-54-214-109-30.us-west-2.compute.amazonaws.com:8080/CodeSpannersRestlet/service/scores");
+		ProxyRestClientImplementation proxyRestlet = new ProxyRestClientImplementation("");
+		ClientResource clientResource = proxyRestlet.getClientResource();
 		Representation highscoresRep = clientResource.post(jsonRes, new MediaType("application/json"));
 		//highscoresRep.write(System.out);
 	}
