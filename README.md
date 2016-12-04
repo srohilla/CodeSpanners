@@ -1,8 +1,9 @@
-# Project Team : Codespanners
+# Project Team : CodeSpanners
 This repository is for CMPE202 Project under Prof. Paul Nguyen. 
 
-# Age of Spartans
+# Game Name : Age of Spartans
 A game designed with a intent of making the process of learning Computer Science concepts fun.
+
 ## Concept to be taught  
 A minimum spanning tree (MST) or minimum weight spanning tree is a subset of the edges of a connected, edge-weighted undirected graph that connects all the vertices together, without any cycles and with the minimum possible total edge weight. That is, it is a spanning tree whose sum of edge weights is as small as possible  
 
