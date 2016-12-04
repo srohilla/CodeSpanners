@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Asteroids extends Actor implements DestroyableObjects, AsteroidDraw
+public class Asteroids extends Actor implements AsteroidDraw
 {
     /**
      * Act - do whatever the Asteroids wants to do. This method is called whenever
@@ -32,10 +32,7 @@ public class Asteroids extends Actor implements DestroyableObjects, AsteroidDraw
         //image.scale(30,30) ;
         
     }
-    public void explode()
-    {
-        
-    }
+    
     public void draw()
     {
     }

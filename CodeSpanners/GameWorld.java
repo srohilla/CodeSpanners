@@ -33,31 +33,32 @@ public class GameWorld extends World implements Subject
     {    
         super(1500, 750, 1);
       
-         HashMap<Integer,Integer> planetmap = buildMatrix(new int[]{1,2},new int[]{2,4});
-          home=new HomePlanet(0,planetmap,340,120);
+                HashMap<Integer,Integer> planetmap = buildMatrix(new int[]{1,2},new int[]{2,4});
+          home=new HomePlanet(0,planetmap,120,400);
          planetmap = buildMatrix(new int[]{0,2,3,5},new int[]{2,3,4,1});
           a1=new AlienPlanet(1,planetmap,340,120);
        
          planetmap=buildMatrix(new int[]{0,1,3,4},new int[]{4,3,5,3});
-          a2=new AlienPlanet(2,planetmap,300,560);
+          a2=new AlienPlanet(2,planetmap,340,600);
         
          planetmap = buildMatrix(new int[]{1,2,5,4},new int[]{4,5,2,2});
           a3=new AlienPlanet(3,planetmap,580,300);
          
          planetmap = buildMatrix(new int[]{2,3,5,6,8},new int[]{3,2,2,3,7});
-          a4=new AlienPlanet(4,planetmap,660,620);
+          a4=new AlienPlanet(4,planetmap,800,620);
          
          planetmap = buildMatrix(new int[]{1,3,4,7},new int[]{1,2,2,7});
-          a5=new AlienPlanet(5,planetmap,750,150);
+          a5=new AlienPlanet(5,planetmap,800,120);
          
          planetmap = buildMatrix(new int[]{4,7,8},new int[]{3,2,3});
-          a6=new AlienPlanet(6,planetmap,900,390);
+          a6=new AlienPlanet(6,planetmap,1100,360);
          
          planetmap = buildMatrix(new int[]{5,6,8},new int[]{7,2,4});
-          a7=new AlienPlanet(7,planetmap,1100,170);
+          a7=new AlienPlanet(7,planetmap,1300,150);
           
          planetmap = buildMatrix(new int[]{7,6,4},new int[]{4,3,7});
-          a8=new AlienPlanet(8,planetmap,1200,650);
+          a8=new AlienPlanet(8,planetmap,1300,620);
+
            
          universeMatrix.put(1,a1);
          universeMatrix.put(2,a2);
@@ -96,140 +97,134 @@ public class GameWorld extends World implements Subject
      Asteroids comets;
      meteorite = (Meteorite) af.getType("Meteorite");
      comets =  (Comets)af.getType("Comet");
-     //meteorite.draw();
-     //comets.draw();
-     addObject(meteorite,230,180);//between home and 1
-     addObject(comets,160,270);//between home and 1
+   
+     addObject(meteorite,250,210);//between home and 1
+     addObject(comets,170,300);//between home and 1
 
-     meteorite=af.getType("Meteorite");
-     //meteorite.draw();
-     addObject(meteorite,430,160);
+     meteorite=af.getType("Meteorite"); //between 3 and 1
+     addObject(meteorite,380,160);
      
-     meteorite=af.getType("Meteorite");
-     //meteorite.draw();
-     addObject(meteorite,420,180);
+     meteorite=af.getType("Meteorite"); //between 3 and 1
+     addObject(meteorite,420,200);
      
-     meteorite=af.getType("Meteorite");
-     //meteorite.draw();
-     addObject(meteorite,440,200);
+     meteorite=af.getType("Meteorite"); //between 3 and 1
+     addObject(meteorite,460,240);
      
-     meteorite=af.getType("Meteorite");
-     //meteorite.draw();
-     addObject(meteorite,470,230);
+     meteorite=af.getType("Meteorite"); //between 3 and 1
+     addObject(meteorite,500,270);
      
      comets =  af.getType("Comet");
-     //comets.draw();
      addObject(comets,550,130); ////between 5 and 1
      
      comets =  af.getType("Comet");
      addObject(comets,200,500);//between h and 2
      meteorite=af.getType("Meteorite");
-     addObject(meteorite,180,510);//between h and 2
+     addObject(meteorite,170,470); //between h and 2
      comets =  af.getType("Comet");
-     addObject(comets,220,480);//between h and 2
+     addObject(comets,230,530);//between h and 2
      meteorite=af.getType("Meteorite");
-     addObject(meteorite,160,490); //between h and 2
+     addObject(meteorite,260,560); //between h and 2
      
      meteorite=af.getType("Meteorite");
-     addObject(meteorite,500,590); //between 2 and 4
+     addObject(meteorite,460,600); //between 2 and 4
      comets =  af.getType("Comet");
-     addObject(comets,420,570); //between 2 and 4
+     addObject(comets,590,600); //between 2 and 4
      meteorite=af.getType("Meteorite");
-     addObject(meteorite,570,600); //between 2 and 4
+     addObject(meteorite,720,610); //between 2 and 4
     
      meteorite=af.getType("Meteorite");
      addObject(meteorite,340,240); //between 2 and 1
      comets =  af.getType("Comet");
-     addObject(comets,320,400); //between 2 and 1
+     addObject(comets,340,430); //between 2 and 1
      meteorite=af.getType("Meteorite");
-     addObject(meteorite,300,350); //between 2 and 1
+     addObject(meteorite,340,350); //between 2 and 1
      
      comets =  af.getType("Comet");
-     addObject(comets,380,520);//between 2 and 3
+     addObject(comets,400,540);//between 2 and 3
      meteorite=af.getType("Meteorite");
-     addObject(meteorite,400,500);//between 3 and 2
+     addObject(meteorite,530,380);//between 3 and 2
      comets =  af.getType("Comet");
-     addObject(comets,440,440);//between 3 and 2
+     addObject(comets,490,430);//between 3 and 2
      meteorite=af.getType("Meteorite");
-     addObject(meteorite,470,370); //between 3 and 2
+     addObject(meteorite,460,460); //between 3 and 2'
      comets =  af.getType("Comet");
-     addObject(comets,520,340);//between 3 and 2
+     addObject(comets,430,500);//between 2 and 3
+
      
      comets =  af.getType("Comet");
-     addObject(comets,610,400); ////between 3 and 4
+     addObject(comets,630,420); ////between 3 and 4
      comets =  af.getType("Comet");
-     addObject(comets,620,500); ////between 3 and 4 
+     addObject(comets,750,550); ////between 3 and 4 
      
      comets =  af.getType("Comet");
-     addObject(comets,670,190); ////between 3 and 5
+     addObject(comets,730,170); ////between 3 and 5
      comets =  af.getType("Comet");
-     addObject(comets,630,230); ////between 3 and 5 
+     addObject(comets,660,240); ////between 3 and 5 
      
      comets =  af.getType("Comet");
-     addObject(comets,725,300); ////between 5 and 4
+     addObject(comets,800,260); ////between 5 and 4
      comets =  af.getType("Comet");
-     addObject(comets,700,490); ////between 5 and 4 
+     addObject(comets,800,490); ////between 5 and 4 
      
       
      comets =  af.getType("Comet");
-     addObject(comets,930,130); ////between 5 and 7
+     addObject(comets,1000,130); //between 5 and 7
      comets =  af.getType("Comet");
-     addObject(comets,820,130); ////between 5 and 7
+     addObject(comets,1100,130); //between 5 and 7
      comets =  af.getType("Comet");
-     addObject(comets,850,130); ////between 5 and 7
+     addObject(comets,1050,130);  //between 5 and 7
      meteorite=af.getType("Meteorite");
-     addObject(meteorite,870,135);//between 5 and 7
+     addObject(meteorite,950,130);//between 5 and 7
      meteorite=af.getType("Meteorite");
      addObject(meteorite,900,130);//between 5 and 7
      comets =  af.getType("Comet");
-     addObject(comets,950,137); ////between 5 and 7
+     addObject(comets,1150,130); //between 5 and 7
      comets =  af.getType("Comet");
-     addObject(comets,1000,138);// between 5 and 7
+     addObject(comets,1200,130);// between 5 and 7
     
      comets =  af.getType("Comet");
-     addObject(comets,960,630); ////between 4 and 8
+     addObject(comets,900,630); //between 4 and 8
      comets =  af.getType("Comet");
-     addObject(comets,800,630); ////between 4 and 8
+     addObject(comets,1000,630); // between 4 and 8
      comets =  af.getType("Comet");
-     addObject(comets,850,630); ////between 4 and 8
+     addObject(comets,1050,630); //between 4 and 8
      meteorite=af.getType("Meteorite");
-     addObject(meteorite,900,635);//between 4 and 8
+     addObject(meteorite,1100,630);//between 4 and 8
      meteorite=af.getType("Meteorite");
-     addObject(meteorite,740,630);//between 4 and 8
+     addObject(meteorite,1150,630);//between 4 and 8
      comets =  af.getType("Comet");
-     addObject(comets,1100,637); ////between 4 and 8
+     addObject(comets,1200,630); //between 4 and 8
      comets =  af.getType("Comet");
-     addObject(comets,1000,638);// between 4 and 8
+     addObject(comets,950,630);// between 4 and 8
      
      meteorite=af.getType("Meteorite");
-     addObject(meteorite,1000,230); //between 6 and 7
+     addObject(meteorite,1250,230); //between 6 and 7
      meteorite=af.getType("Meteorite");
-     addObject(meteorite,950,280); //between 6 and 7
+     addObject(meteorite,1200,280); //between 6 and 7
      
      comets =  af.getType("Comet");
-     addObject(comets,1150,450); ////between 7 and 8
+     addObject(comets,1300,450); ////between 7 and 8
      comets =  af.getType("Comet");
-     addObject(comets,1150,250); ////between 7 and 8
+     addObject(comets,1300,250); ////between 7 and 8
      comets =  af.getType("Comet");
-     addObject(comets,1150,350); ////between 7 and 8
+     addObject(comets,1300,350); ////between 7 and 8
      comets =  af.getType("Comet");
-     addObject(comets,1180,550); ////between 7 and 8
+     addObject(comets,1300,550); ////between 7 and 8
      
      comets =  af.getType("Comet");
-     addObject(comets,980,440);//between 6 and 8
+     addObject(comets,1150,460); //between 6 and 8
      meteorite=af.getType("Meteorite");
-     addObject(meteorite,1070,520);//between 6 and 8
+     addObject(meteorite,1200,500); //between 6 and 8
      comets =  af.getType("Comet");
-     addObject(comets,1140,580);//between 6 and 8
+     addObject(comets,1240,540); //between 6 and 8
      
      comets =  af.getType("Comet");
-     addObject(comets,850,440);//between 6 and 4
+     addObject(comets,1050,440);//between 6 and 4
      meteorite=af.getType("Meteorite");
-     addObject(meteorite,780,520);//between 6 and 4
+     addObject(meteorite,970,500);//between 6 and 4
      comets =  af.getType("Comet");
-     addObject(comets,700,580);//between 6 and 4
-     
-     
+     addObject(comets,900,560);//between 6 and 4
+    
      
      
      
@@ -238,13 +233,14 @@ public class GameWorld extends World implements Subject
      addObject(spaceship,120,350);        
       
      addObject(a1,340,120);
-     addObject(a2,300,560);
+     addObject(a2,340,600);
      addObject(a3,580,300);
-     addObject(a4,660,620);
-     addObject(a5,750,150);
-     addObject(a6,900,390);
-     addObject(a7,1100,170);
-     addObject(a8,1200,650);
+     addObject(a4, 800,620);
+     addObject(a5,800,120);
+     addObject(a6,1100,360);
+     addObject(a7,1300,150);
+     addObject(a8,1300,620);
+
   
     // addObject(m,670,450);
     
@@ -288,8 +284,8 @@ public class GameWorld extends World implements Subject
         }
     }
  public String getState() {
-		return newscore ;
-	}
+        return newscore ;
+    }
   public void updateScore(int wieght){  
       score=score+wieght;
       maxFuel=maxFuel-wieght;

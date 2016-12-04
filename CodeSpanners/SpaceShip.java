@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class SpaceShip extends Actor implements movableObjects
+public class SpaceShip extends Actor
 {
    
     public SpaceShip()
@@ -20,21 +20,5 @@ public class SpaceShip extends Actor implements movableObjects
     //
        
     }  
-    
-    public void appear()
-    {
-        
-    }
-    
-    public void disappear()
-    {
-        //To do code
-    }
-    
-    public void travel(int xLoc,int yLoc)
-    {
-        
-     
-    }
-    
+ 
 }
