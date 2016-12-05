@@ -1,5 +1,5 @@
 /**
- * 
+ * Reciever of command pattern
  */
 public interface Receiver  
 {

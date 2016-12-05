@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=PlayCommand
+comment0.text=\n\ \ Class\ that\ implements\ Command\ and\ \n\ \ executes\ the\ action\ of\ launching\ the\ game\ world\n
 comment1.params=r1
 comment1.target=void\ setReceiver(Receiver)
 comment2.params=

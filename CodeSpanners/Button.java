@@ -2,10 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
 
 /**
- * An object you can click on, and something will happen...
+ * Button class for encapsulating behavoiur of a button
  * 
- * @author Rucha
- * @version 1.0
  */
 public class Button extends Actor implements Invoker
 {

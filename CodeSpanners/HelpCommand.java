@@ -1,3 +1,7 @@
+/**
+ * Class that implements Command and execute 
+ * the action of launching help world
+ */
 public class HelpCommand implements Command {
 
 private Receiver r;

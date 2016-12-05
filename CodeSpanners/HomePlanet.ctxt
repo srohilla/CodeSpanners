@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=HomePlanet
-comment0.text=\nHolds\ \n
+comment0.text=\nHolds\ the\ logic\ for\ Home\ Planet\n
 comment1.params=
 comment1.target=HomePlanet()
 comment2.params=planetNumber\ adjMatrix\ xLoc\ yLoc

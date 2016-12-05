@@ -1,3 +1,7 @@
+/**
+ * Class that implements Command and execute 
+ * the action of going back to a world
+ */
 public class BackCommand implements Command {
 
 private Receiver r;

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Button
-comment0.text=\n\ An\ object\ you\ can\ click\ on,\ and\ something\ will\ happen...\n\ \n\ @author\ Rucha\n\ @version\ 1.0\n
+comment0.text=\n\ Button\ class\ for\ encapsulating\ behavoiur\ of\ a\ button\n\ \n
 comment1.params=title
 comment1.target=Button(java.lang.String)
 comment1.text=\n\ Constructor\ for\ objects\ of\ the\ class\ Button\n

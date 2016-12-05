@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=HelpCommand
+comment0.text=\n\ Class\ that\ implements\ Command\ and\ execute\ \n\ the\ action\ of\ launching\ help\ world\n
 comment1.params=r1
 comment1.target=void\ setReceiver(Receiver)
 comment2.params=
