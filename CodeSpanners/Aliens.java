@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Aliens here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Holds the logic for Aliens displayed on Capturable Planets
  */
 public class Aliens extends Actor 
 {

@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
- * Write a description of class HomePlanet here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ *Holds the logic for Home Planet
  */
 public class HomePlanet extends Planet
 {
@@ -12,8 +9,7 @@ public class HomePlanet extends Planet
     
     public HomePlanet()
     {
-       
-     //   this.getImage().scale(2000,2000);
+   
     }
     public HomePlanet(int planetNumber,HashMap<Integer,Integer> adjMatrix,int xLoc,int yLoc){
      super();

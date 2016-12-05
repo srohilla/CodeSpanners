@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=AsteroidDraw
-comment0.text=\n\ Write\ a\ description\ of\ class\ AsteroidDraw\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Asteroid\ Draw\ interface\ declares\ the\ draw()\ method\ which\ implements\ creation\ of\ comets\ and\ meteriotes\ \n
 comment1.params=
 comment1.target=void\ draw()
 numComments=2

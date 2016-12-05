@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=MenuWorld
+comment0.text=\n\ MenuWorld\ class\ holds\ the\ basic\ logic\ and\ rendering\ of\ the\ MenuWorld\ World\ \n\ \n
 comment1.params=
 comment1.target=MenuWorld()
 comment2.params=

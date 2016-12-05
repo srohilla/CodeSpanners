@@ -1,11 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Comets here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+ * Comet to express weight of the path between planets
+ **/
 public class Comets extends Asteroids
 {
     /**
@@ -15,8 +12,7 @@ public class Comets extends Asteroids
     
     public Comets()
     {
-     GreenfootImage image = getImage() ;
-      image.scale(30,30) ;
+   
       draw();
     }
     public void act() 

@@ -1,10 +1,8 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*; 
 
 /**
- * Write a description of class HelpGameWorld here.
+ * HelpGameWorld class holds the basic logic and rendering of the HelpGame World 
  * 
- * @author (your name) 
- * @version (a version number or a date)
  */
 public class HelpGameWorld extends World
 {
@@ -17,7 +15,7 @@ public class HelpGameWorld extends World
     private BackCommand bc;
     public HelpGameWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        
         super(1600, 900, 1);
         bb = new BackButton("Back");
         bc = new BackCommand();

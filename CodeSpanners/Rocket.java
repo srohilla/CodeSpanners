@@ -1,10 +1,6 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import greenfoot.*; 
 /**
- * Write a description of class Rocket here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Rocket for showing that planet is captured
  */
 public class Rocket extends Actor
 {  int startPlanetId;
@@ -29,20 +25,6 @@ public class Rocket extends Actor
          }
     }  
     
-    public void appear()
-    {
-        
-    }
-    
-    public void disappear()
-    {
-        //To do code
-    }
-    
-    public void travel(int xLoc,int yLoc)
-    {
-        
-     
-    }
+   
       
 }

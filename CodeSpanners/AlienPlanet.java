@@ -1,13 +1,11 @@
 import greenfoot.*;
 import java.util.*;
 import java.awt.Color;
-  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
 
 /**
- * Write a description of class AlienPlanet here.
+ * Holds the logic of Alien planet 
  * 
- * @author (your name) 
- * @version (a version number or a date)
  */
 public class AlienPlanet extends Planet 
 {
@@ -23,8 +21,7 @@ public class AlienPlanet extends Planet
 
      PlanetState originalState;
      PlanetState capturedState;
-    
-    //Actor alien = getOneObjectAtOffset(0,0, Aliens.class);  
+ 
     /**
      * Act - do whatever the AlienPlanet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -33,7 +30,6 @@ public class AlienPlanet extends Planet
     public AlienPlanet(){
         super();
         
-  //      this.getImage().scale(50,50);
     }
     public AlienPlanet(int planetNumber,HashMap<Integer,Integer> adjMatrix,int xLoc,int yLoc){
         super();

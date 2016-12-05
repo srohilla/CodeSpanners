@@ -1,8 +1,5 @@
 /**
- * Write a description of class AsteroidDraw here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Asteroid Draw interface declares the draw() method which implements creation of comets and meteriotes 
  */
 public interface AsteroidDraw  
 {

@@ -1,7 +1,11 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 import java.awt.Color;
 
 
+/**
+ * MenuWorld class holds the basic logic and rendering of the MenuWorld World 
+ * 
+ */
 public class MenuWorld extends World
 {
     /**

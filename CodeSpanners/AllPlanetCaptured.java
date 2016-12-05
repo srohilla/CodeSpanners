@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.io.IOException;
 /**
- * Write a description of class AllPlanetCaptured here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Holds the logic for Scenario when all planets are captured
  */
 public class AllPlanetCaptured extends Actor
 {

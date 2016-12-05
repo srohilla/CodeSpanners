@@ -1,8 +1,7 @@
 /**
- * Write a description of class OriginalState here.
+ * Orginal State of Alien Planet 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Seema Rohilla 
  */
 import java.util.*;
 import greenfoot.*;
@@ -23,7 +22,7 @@ public class OriginalState implements PlanetState
          if((planet.neighbourMatrix.containsKey(g.selectedPlanetId))){
            
            Greenfoot.playSound("explosion.wav"); 
-          //  isCaptured=true;
+
                Set<Integer> keys=planet.neighbourMatrix.keySet();
              
              g.removeObject(planet.alien);

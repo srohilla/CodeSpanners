@@ -1,9 +1,6 @@
 import org.restlet.resource.ClientResource;
 /**
- * Write a description of class RestClientImplementation here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Class for proxy Pattern
  */
 public class RestClientImplementation implements RestClient
 {

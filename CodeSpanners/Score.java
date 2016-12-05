@@ -13,10 +13,8 @@ import org.restlet.resource.ClientResource;
 import org.restlet.resource.ResourceException;
 
 /**
- * Write a description of class Score here.
+ * Class that interacts with the Server using proxy and fetches/posts the score
  * 
- * @author (your name) 
- * @version (a version number or a date)
  */
 public class Score extends Actor
 {   public static String playerName;

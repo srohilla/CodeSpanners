@@ -1,8 +1,7 @@
 /**
- * Write a description of class CapturedState here.
+ * Captured State of Alien planet
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Seema Rohilla 
  */
 import java.util.*;
 
@@ -21,7 +20,7 @@ public class CapturedState implements PlanetState
          Set<Integer> keys=planet.neighbourMatrix.keySet();
 
           g.selectedPlanetId=planet.planetNumber;
-        //  planet.setState();
+     
              g.isSourceSelected=true;
              for(Integer k:keys){
              g.activateNeighbourAlien(k);

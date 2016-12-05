@@ -1,10 +1,7 @@
 import greenfoot.*; 
  
 /**
- * Write a description of class SpaceShip here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Spaceship on Home planet
  */
 public class SpaceShip extends Actor
 {
@@ -17,7 +14,7 @@ public class SpaceShip extends Actor
     public void act() 
     {
         
-    //
+   
        
     }  
  

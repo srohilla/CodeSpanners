@@ -1,10 +1,8 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 import java.awt.Color;
 /**
- * Write a description of class StringInputBox here.
+ * StringInputBox to take input from player
  * 
- * @author (your name) 
- * @version (a version number or a date)
  */
 public class StringInputBox extends Actor
 {
@@ -40,10 +38,10 @@ public class StringInputBox extends Actor
         if (key == null) return;
         if ("enter".equals(key) && text.length() > 0)
         {
-           // System.out.println("You entered String "+text);
+          
             name=text;
             System.out.println("Your name :"+name);
-           // text = "Enter your Name :";
+           
             updateImage();
              MenuWorld g=(MenuWorld) getWorld();
              g.setPlayerName(name);

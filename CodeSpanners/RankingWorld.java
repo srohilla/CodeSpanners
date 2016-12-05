@@ -1,10 +1,8 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*; 
 
 /**
- * Write a description of class RankingWorld here.
+ * RankingWorld class holds the basic logic and rendering of the Ranking World 
  * 
- * @author (your name) 
- * @version (a version number or a date)
  */
 public class RankingWorld extends World
 {
@@ -15,7 +13,7 @@ public class RankingWorld extends World
      */
     public RankingWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+  
         super(800, 600, 1); 
         Ranking rank=new Ranking();
         addObject(rank,400, 300);

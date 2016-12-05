@@ -1,14 +1,12 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 import java.util.*;
 import javax.swing.JOptionPane;
 /**
- * Write a description of class MyWorld here.
+ * GameWorld class holds the basic logic and rendering of the game
  * 
- * @author (your name) 
- * @version (a version number or a date)
  */
 public class GameWorld extends World implements Subject
-{   //int time;
+{  
     boolean allCaptured=false;
     int score=0;
     int noOfPlanetsCaptured=0;
@@ -25,41 +23,41 @@ public class GameWorld extends World implements Subject
     private ArrayList<Observer> observers = new ArrayList<Observer>() ;
     AsteroidFactory af = new AsteroidFactory();
     /**
-     * Constructor for objects of class MyWorld.
+     * Constructor for objects of class GameWorld.
      * 
      */
-    
     public GameWorld()
     {    
         super(1500, 750, 1);
       
-                HashMap<Integer,Integer> planetmap = buildMatrix(new int[]{1,2},new int[]{2,4});
+          HashMap<Integer,Integer> planetmap = buildMatrix(new int[]{1,2},new int[]{2,4});
           home=new HomePlanet(0,planetmap,120,400);
-         planetmap = buildMatrix(new int[]{0,2,3,5},new int[]{2,3,4,1});
+          planetmap = buildMatrix(new int[]{0,2,3,5},new int[]{2,3,4,1});
           a1=new AlienPlanet(1,planetmap,340,120);
        
-         planetmap=buildMatrix(new int[]{0,1,3,4},new int[]{4,3,5,3});
+          planetmap=buildMatrix(new int[]{0,1,3,4},new int[]{4,3,5,3});
           a2=new AlienPlanet(2,planetmap,340,600);
         
-         planetmap = buildMatrix(new int[]{1,2,5,4},new int[]{4,5,2,2});
+          planetmap = buildMatrix(new int[]{1,2,5,4},new int[]{4,5,2,2});
           a3=new AlienPlanet(3,planetmap,580,300);
          
-         planetmap = buildMatrix(new int[]{2,3,5,6,8},new int[]{3,2,2,3,7});
+          planetmap = buildMatrix(new int[]{2,3,5,6,8},new int[]{3,2,2,3,7});
           a4=new AlienPlanet(4,planetmap,800,620);
          
          planetmap = buildMatrix(new int[]{1,3,4,7},new int[]{1,2,2,7});
           a5=new AlienPlanet(5,planetmap,800,120);
          
-         planetmap = buildMatrix(new int[]{4,7,8},new int[]{3,2,3});
+          planetmap = buildMatrix(new int[]{4,7,8},new int[]{3,2,3});
           a6=new AlienPlanet(6,planetmap,1100,360);
          
-         planetmap = buildMatrix(new int[]{5,6,8},new int[]{7,2,4});
+          planetmap = buildMatrix(new int[]{5,6,8},new int[]{7,2,4});
           a7=new AlienPlanet(7,planetmap,1300,150);
           
-         planetmap = buildMatrix(new int[]{7,6,4},new int[]{4,3,7});
+          planetmap = buildMatrix(new int[]{7,6,4},new int[]{4,3,7});
           a8=new AlienPlanet(8,planetmap,1300,620);
 
-           
+         //building universeMatrix
+         
          universeMatrix.put(1,a1);
          universeMatrix.put(2,a2);
          universeMatrix.put(3,a3);
@@ -73,7 +71,10 @@ public class GameWorld extends World implements Subject
        
     }
    
-   //building neighbour matrix
+   /**
+    * building neighbour matrix
+    * 
+    */
     HashMap<Integer,Integer> buildMatrix(int a[] , int b[])
     {
          HashMap<Integer,Integer> planetMatrix = new HashMap<Integer,Integer>();
@@ -87,11 +88,11 @@ public class GameWorld extends World implements Subject
     
     void prepare()
     {
-     // addObject(r,240,160);
-        //adding asteroid
+     //accepting playername
      playerName = JOptionPane.showInputDialog("Please Enter Your Name Spartan !");   
      Score.playerName=playerName;
      bgSound.play();
+     
      //Creating object of the factory class 
      Asteroids meteorite ;
      Asteroids comets;
@@ -225,13 +226,11 @@ public class GameWorld extends World implements Subject
      comets =  af.getType("Comet");
      addObject(comets,900,560);//between 6 and 4
     
-     
-     
-     
-     
+     //adding Home planet and Spaceship to GameWorld
      addObject(home,120,400);
      addObject(spaceship,120,350);        
-      
+     
+     //adding alien planets to Gameworld
      addObject(a1,340,120);
      addObject(a2,340,600);
      addObject(a3,580,300);
@@ -241,23 +240,18 @@ public class GameWorld extends World implements Subject
      addObject(a7,1300,150);
      addObject(a8,1300,620);
 
-  
-    // addObject(m,670,450);
-    
-     //Greenfoot.playSound("background.wav"); 
-
+     //Fuel Bar
      showText("Fuel", 20, 20);
      addObject(currentScore,150,20);
      currentScore.setText(String.valueOf(maxFuel));
      observers.add(currentScore);
     }
-    void submitScores(){
-    //to do
-    }
-    void growSoldiers(){
-    //to do
-    }
-    void activateNeighbour(int key){
+   
+    /**
+     * Activating the neighbouring alienplanet
+     * 
+     */
+    public void activateNeighbour(int key){
         if (key==0){
         return;
         }
@@ -267,9 +261,15 @@ public class GameWorld extends World implements Subject
          p.alienGrow();
     }
     }    
+    
+    /**
+     * updating the no. of Planets Captured
+     * 
+     */
     public void updatePlanetCount(){
         noOfPlanetsCaptured++;
     }
+    
     public  void attach(Observer obj){
         observers.add(obj) ;
     }
@@ -277,22 +277,33 @@ public class GameWorld extends World implements Subject
     public  void detach(Observer obj){
         observers.remove(obj) ;
     }
+    
     public  void notifyObservers(){
         for (Observer obj  : observers)
         {
             obj.update();
         }
     }
+    
  public String getState() {
         return newscore ;
     }
+    
+  /**
+   * updating the score
+   * 
+   */
   public void updateScore(int wieght){  
       score=score+wieght;
       maxFuel=maxFuel-wieght;
       newscore=String.valueOf(maxFuel);
       notifyObservers();
-      //currentScore.setText(""+newscore);
+      
     }
+    /**
+     * checking if all planets captured
+     * 
+     */
   public boolean checkAllCaptured(){
       if(noOfPlanetsCaptured==8){
         allCaptured=true;
@@ -300,10 +311,15 @@ public class GameWorld extends World implements Subject
     return allCaptured;
     }  
     
+    
     public int getMaxFuel(){
     return maxFuel;
     }
     
+    /**
+     * activating the Neighbouring planet aliens
+     * 
+     */
     void activateNeighbourAlien(int key){
         if (key==0){
         return;
@@ -313,6 +329,7 @@ public class GameWorld extends World implements Subject
          p.activateAlien();
     }
     } 
+    
      public void setPlayerName(String name){
      this.playerName=name;
     

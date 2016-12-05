@@ -1,14 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
- * Write a description of class Planet here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Parent class for Alien and Home Planet
  */
 public class Planet extends Actor
-{   //status of planet
-   // String Status="NotCaptured";
+{   
     public boolean isCaptured= false;
     public boolean isClickable=false;
     public int planetNumber;
@@ -36,7 +32,7 @@ public class Planet extends Actor
     //marks the planet as captured
     public void capture(){
     
-        //Status="Captured";
+      
     
     }
     

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=RestClientImplementation
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ RestClientImplementation\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Class\ for\ proxy\ Pattern\n
 comment1.params=
 comment1.target=RestClientImplementation()
 comment2.params=

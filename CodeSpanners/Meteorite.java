@@ -1,11 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Meteorite here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+ * Meteorite to express weight of the path between planets
+ **/
 public class Meteorite extends Asteroids
 {
     /**
@@ -15,8 +12,7 @@ public class Meteorite extends Asteroids
     
     public Meteorite()
     {
-      GreenfootImage image = getImage() ;
-      image.scale(20,20) ;
+ 
       draw();
     }
     public void act() 

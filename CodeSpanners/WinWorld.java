@@ -1,11 +1,9 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*; 
 import java.io.IOException;
 import java.util.HashMap;
 /**
- * Write a description of class WinWorld here.
+ * WinWorld class holds the basic logic and rendering of the winning scenario of the game
  * 
- * @author (your name) 
- * @version (a version number or a date)
  */
 public class WinWorld extends World
 {
@@ -17,7 +15,7 @@ public class WinWorld extends World
     public WinWorld()
     {    
        
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+   
         super(800, 600, 1); 
         Greenfoot.playSound("GameWin.wav");
         AllPlanetCaptured allPlanetCaptured=new AllPlanetCaptured();

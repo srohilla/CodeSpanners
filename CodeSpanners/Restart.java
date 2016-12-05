@@ -1,11 +1,9 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 import java.awt.Font;
 import java.awt.Color;
 /**
- * Write a description of class Restart here.
+ * Restart Class to restart the game when you press Enter
  * 
- * @author (your name) 
- * @version (a version number or a date)
  */
 public class Restart extends Actor
 {
@@ -26,7 +24,7 @@ public class Restart extends Actor
     Font f = new Font("Arial", 1, 30);
     this.text.setFont(f);
     this.text.setColor(Color.white);
-  //  this.text.drawString("Press enter to restart", 50, 50);
+  
     setImage(this.text);
   }  
 }

@@ -1,19 +1,19 @@
 #BlueJ class context
 comment0.target=Button
-comment0.text=\r\n\ An\ object\ you\ can\ click\ on,\ and\ something\ will\ happen...\r\n\ \r\n\ @author\ Rucha\r\n\ @version\ 1.0\r\n
+comment0.text=\n\ An\ object\ you\ can\ click\ on,\ and\ something\ will\ happen...\n\ \n\ @author\ Rucha\n\ @version\ 1.0\n
 comment1.params=title
 comment1.target=Button(java.lang.String)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ the\ class\ Button\r\n
+comment1.text=\n\ Constructor\ for\ objects\ of\ the\ class\ Button\n
 comment2.params=
 comment2.target=void\ putTextOnImage()
 comment3.params=
 comment3.target=void\ act()
-comment3.text=\r\n\ Check\ for\ clicks\ on\ the\ button.\r\n
+comment3.text=\n\ Check\ for\ clicks\ on\ the\ button.\n
 comment4.params=c1
 comment4.target=void\ setCommand(Command)
 comment5.params=
 comment5.target=void\ invoke()
 comment6.params=
 comment6.target=java.lang.String\ getTitle()
-comment6.text=\r\n\ Returns\ the\ title\ of\ the\ button.\r\n
+comment6.text=\n\ Returns\ the\ title\ of\ the\ button.\n
 numComments=7

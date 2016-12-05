@@ -1,10 +1,7 @@
 import org.restlet.resource.ClientResource;
 /**
- * Write a description of class ProxyRestImplementation here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+ * class ProxyRestImplementation here.
+ **/ 
 public class ProxyRestClientImplementation implements RestClient
 {
     private RestClientImplementation restletClient;

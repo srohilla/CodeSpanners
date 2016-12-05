@@ -1,8 +1,7 @@
 /**
- * Write a description of class AsteroidFactory here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Asteroid factory implements factory pattern to create objects of Asteroids
+ * 
  */
 public class AsteroidFactory  
 {

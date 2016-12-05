@@ -13,10 +13,9 @@ import java.util.Set;
 import java.util.*;
 
 /**
- * Write a description of class Ranking here.
+ * Holds the logic for calculating the Ranking of the player
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Seema Rohilla
  */
 public class Ranking extends Actor
 {  
@@ -41,7 +40,6 @@ public class Ranking extends Actor
         
         String[] sb =  new String[3];
         HashMap<String,String> map=Score.getScores(); 
-      //  System.out.println("scoreMap: " + map);
         HashMap<String,String> resultmap=sortByValues(map);
         System.out.println("SortedscoreMap: " + resultmap);
          Iterator it = resultmap.entrySet().iterator();
@@ -56,7 +54,6 @@ public class Ranking extends Actor
           if(Score.playerName.equals(pair.getKey())){
             rank=count+1;
             }
-        //  System.out.println(pair.getKey() + "--> " + pair.getValue());
           it.remove(); 
     
           count++;
@@ -83,7 +80,7 @@ public class Ranking extends Actor
     }
       private static HashMap sortByValues(HashMap map) { 
        List list = new LinkedList(map.entrySet());
-       // Defined Custom Comparator here
+  
        
        Comparator cmp=new Comparator() {
             public int compare(Object o1, Object o2) {
@@ -93,9 +90,7 @@ public class Ranking extends Actor
        };
      
        Collections.sort(list,Collections.reverseOrder(cmp));
-
-       // Here I am copying the sorted list in HashMap
-       // using LinkedHashMap to preserve the insertion order
+    
        HashMap sortedHashMap = new LinkedHashMap();
        for (Iterator it = list.iterator(); it.hasNext();) {
               Entry entry = (Entry) it.next();
